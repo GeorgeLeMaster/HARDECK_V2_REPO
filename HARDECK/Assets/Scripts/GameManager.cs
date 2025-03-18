@@ -97,6 +97,7 @@ public class GameManager : MonoBehaviour
             }
 
             ACDP_player.abilityId = selectedAbility_player;
+            AbilitiesLibrary.DisplayACDPGFX(ACDP_player);
             AbilitiesLibrary.DisplayAbilityPreGFX( ACDP_player );
         } // <--- if (Input.GetMouseButtonDown(0))
     }

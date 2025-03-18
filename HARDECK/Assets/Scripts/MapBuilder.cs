@@ -1,8 +1,10 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
+
 
 public class MapBuilder : MonoBehaviour
 {
@@ -12,7 +14,7 @@ public class MapBuilder : MonoBehaviour
     public Vector3Int mapSize;
 
     public SceneryObject[,,] groundTiles;
-    public MapVoxel[,,] masterVoxelData;
+    public MapVoxelData[,,] masterVoxelData;
 
     private void Awake()
     {
@@ -45,7 +47,7 @@ public class MapBuilder : MonoBehaviour
 
         // Build and texture ground tiles
         groundTiles = new SceneryObject[mapSize.x + 1, mapSize.y + 1, mapSize.z + 1];
-        masterVoxelData = new MapVoxel[mapSize.x + 1, mapSize.y + 1, mapSize.z + 1];
+        masterVoxelData = new MapVoxelData[mapSize.x + 1, mapSize.y + 1, mapSize.z + 1];
         SceneryObject[] grabbedTiles = GameObject.FindObjectsOfType<SceneryObject>();
 
         // Find all ground tiles and sort them into the groundTiles array
@@ -55,7 +57,7 @@ public class MapBuilder : MonoBehaviour
             {
                 Vector3Int pos = g.tilemapPosition;
                 groundTiles[pos.x, pos.y, pos.z] = g;
-               // masterVoxelData[pos.x,pos.y,pos.z].sceneryObjects.Add(g);
+                masterVoxelData[pos.x,pos.y,pos.z].
             }
         }
 
@@ -94,11 +96,24 @@ public class MapBuilder : MonoBehaviour
 
     public List<Vector3Int> BuildPath(Vector3Int from, Vector3Int to)
     {
-        List<Vector3Int> path = new List<Vector3Int>();
+        List<Vector3Int> result = new List<Vector3Int>();
 
-        path.Add(to);
+        List<Vector3Int> toCheck = new List<Vector3Int>();
+        toCheck.Add(from); 
 
-        return path;
+        bool[,,] checkedArray = new bool[mapSize.x+1, mapSize.y+1, mapSize.z+1];
+
+        while (toCheck.Count() > 0)
+        {
+            Vector3Int currentCheckPos = toCheck.First();
+
+
+
+            toCheck.RemoveAt(0);
+            checkedArray[currentCheckPos.x, currentCheckPos.y, currentCheckPos.z] = true;
+        }
+
+        return result;
     }
 }
 

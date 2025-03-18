@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Windows;
 
 public enum EntityType
 {
@@ -18,6 +19,15 @@ public enum VisabilityStatus
     Invisable,
     FogOfWar,
     Undiscovered
+}
+
+public enum PathableStatus
+{
+    Pathable,
+    Air,
+    Blocked_Pathable,
+    Blocked_Air,
+    Undeclared
 }
 
 public enum Tileset
@@ -141,6 +151,11 @@ public static class AbilitiesLibrary
 
     public static void DisplayAbilityPreGFX(AbilityCallDataPackage input)
     {
+        
+    }
+
+    public static void DisplayACDPGFX(AbilityCallDataPackage input)
+    {
         if (input.caster != null)
         {
             GameManager.Instance.selectedUnit_marker.SetActive(true);
@@ -149,14 +164,12 @@ public static class AbilitiesLibrary
         else
         {
             GameManager.Instance.selectedUnit_marker.SetActive(false);
-
         }
 
-        if (!CheckAbilityParameters(input)) 
+        if (!CheckAbilityParameters(input))
         {
             GameManager.Instance.target_pos_marker.SetActive(false);
-
-            return; 
+            return;
         }
 
         switch (input.abilityId)
@@ -165,7 +178,7 @@ public static class AbilitiesLibrary
             case 0:
                 //MOVE
                 GameManager.Instance.target_pos_marker.SetActive(true);
-                GameManager.Instance.target_pos_marker.transform.position = (Vector3Int) input.target_pos;
+                GameManager.Instance.target_pos_marker.transform.position = (Vector3Int)input.target_pos;
 
                 break;
 
@@ -197,7 +210,6 @@ public static class AbilitiesLibrary
 
 }
 
-
 public class AbilityObject
 {
     public int abilityId;
@@ -205,10 +217,12 @@ public class AbilityObject
     public int usesRemaining;
 }
 
-public class MapVoxel
+public class MapVoxelData
 {
-    public MapVoxel()
+    public MapVoxelData()
     {
+        pathableStatus = PathableStatus.Undeclared;
+
         visabilityStatus = VisabilityStatus.Undiscovered;
 
         tilemapPosition = new Vector3Int(-1,-1,-1);
@@ -216,9 +230,12 @@ public class MapVoxel
         sceneryObjects = new List<SceneryObject>();
     }
 
+    public PathableStatus pathableStatus;
+
     public VisabilityStatus visabilityStatus;
 
     public Vector3Int tilemapPosition;
 
     public List<SceneryObject> sceneryObjects;
 }
+
