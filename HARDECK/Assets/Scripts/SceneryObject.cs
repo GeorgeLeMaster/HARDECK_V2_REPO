@@ -13,15 +13,25 @@ public class SceneryObject : EntityBase
         if (!groundTile)
         {
             flags.destructable = true;
+            flags.pathable = true;
         }
 
         // SET INT POS
-        intPos = new Vector3Int (Mathf.RoundToInt( transform.position.x ), Mathf.RoundToInt(transform.position.y), Mathf.RoundToInt(transform.position.z));
+        tilemapPosition = new Vector3Int (Mathf.RoundToInt( transform.position.x ), Mathf.RoundToInt(transform.position.y), Mathf.RoundToInt(transform.position.z));
 
 
         if (groundTile)
         {
-            gameObject.name = $"GroundTile {intPos}";
+            gameObject.name = $"GroundTile {tilemapPosition}";
+        }
+
+
+        // Logic to be executed for all non terrain scenery Objects vvvvvv
+        if (entityType == EntityType.SceneryObj && !groundTile)
+        {
+            
+
+
         }
     }
 }

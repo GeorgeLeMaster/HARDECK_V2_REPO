@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class MapBuilder : MonoBehaviour
     public Vector3Int mapSize;
 
     public SceneryObject[,,] groundTiles;
+    public MapVoxel[,,] masterVoxelData;
 
     private void Awake()
     {
@@ -43,6 +45,7 @@ public class MapBuilder : MonoBehaviour
 
         // Build and texture ground tiles
         groundTiles = new SceneryObject[mapSize.x + 1, mapSize.y + 1, mapSize.z + 1];
+        masterVoxelData = new MapVoxel[mapSize.x + 1, mapSize.y + 1, mapSize.z + 1];
         SceneryObject[] grabbedTiles = GameObject.FindObjectsOfType<SceneryObject>();
 
         // Find all ground tiles and sort them into the groundTiles array
@@ -50,13 +53,15 @@ public class MapBuilder : MonoBehaviour
         {
             if (g.groundTile)
             {
-                Vector3Int pos = g.intPos;
+                Vector3Int pos = g.tilemapPosition;
                 groundTiles[pos.x, pos.y, pos.z] = g;
+               // masterVoxelData[pos.x,pos.y,pos.z].sceneryObjects.Add(g);
             }
         }
 
         // Tile them with their respective material
-        int tileRate = 4;
+        #region Texture Tiling
+        float tileRate = 2f;
         float xoffset;
         float zoffset;
 
@@ -64,12 +69,11 @@ public class MapBuilder : MonoBehaviour
         {
             if (g == null) { continue; }
 
-            xoffset = (g.intPos.x + tileRate) % tileRate;
-            zoffset = (g.intPos.z + tileRate) % tileRate;
+            xoffset = (g.tilemapPosition.x + tileRate) % tileRate;
+            zoffset = (g.tilemapPosition.z + tileRate) % tileRate;
 
 
             g.gfxParent.GetComponent<Renderer>().material = Resources.Load($"MapResources/Tilesets/{g.tileset.ToString()}/GroundMat_{g.tileset.ToString()}", typeof(Material)) as Material;
-            //g.gfxParent.GetComponent<Renderer>().material = Resources.Load($"MapResources/Tilesets/Desert/GroundMat_Desert", typeof (Material)) as Material;
 
             Material gMat = g.gfxParent.GetComponent<Renderer>().material;
             
@@ -83,7 +87,18 @@ public class MapBuilder : MonoBehaviour
             gMat.SetTextureScale("_BumpMap", new Vector2(((float)1 / tileRate), ((float)1 / tileRate)));
             gMat.SetTextureOffset("_BumpMap", new Vector2((float)((tileRate - xoffset) / tileRate), (float)((tileRate - zoffset) / tileRate)));
         }
+        #endregion
 
+
+    }
+
+    public List<Vector3Int> BuildPath(Vector3Int from, Vector3Int to)
+    {
+        List<Vector3Int> path = new List<Vector3Int>();
+
+        path.Add(to);
+
+        return path;
     }
 }
 
