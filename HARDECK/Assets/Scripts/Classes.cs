@@ -228,6 +228,8 @@ public class MapVoxelData
         tilemapPosition = new Vector3Int(-1,-1,-1);
 
         sceneryObjects = new List<SceneryObject>();
+
+        obstructedDirections = new bool[3, 3];
     }
 
     public PathableStatus pathableStatus;
@@ -237,5 +239,7 @@ public class MapVoxelData
     public Vector3Int tilemapPosition;
 
     public List<SceneryObject> sceneryObjects;
+
+    public bool[,] obstructedDirections;
 }
 
