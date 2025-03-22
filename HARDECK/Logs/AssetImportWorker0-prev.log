@@ -15,7 +15,7 @@ D:/Unity (D)/HARDECK_V2_REPO/HARDECK
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-52513
+55682
 Successfully changed project path to: D:/Unity (D)/HARDECK_V2_REPO/HARDECK
 D:/Unity (D)/HARDECK_V2_REPO/HARDECK
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ D:/Unity (D)/HARDECK_V2_REPO/HARDECK
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [6860] Host "[IP] 172.18.176.1 [Port] 0 [Flags] 2 [Guid] 3944698443 [EditorId] 3944698443 [Version] 1048832 [Id] WindowsEditor(7,LeMasterMSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [19500] Host "[IP] 172.18.176.1 [Port] 0 [Flags] 2 [Guid] 2804955370 [EditorId] 2804955370 [Version] 1048832 [Id] WindowsEditor(7,LeMasterMSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [6860] Host "[IP] 172.18.176.1 [Port] 0 [Flags] 2 [Guid] 3944698443 [EditorId] 3944698443 [Version] 1048832 [Id] WindowsEditor(7,LeMasterMSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [19500] Host "[IP] 172.18.176.1 [Port] 0 [Flags] 2 [Guid] 2804955370 [EditorId] 2804955370 [Version] 1048832 [Id] WindowsEditor(7,LeMasterMSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-Refreshing native plugins compatible for Editor in 12.07 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 8.84 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.32f1 (c8300dc0a3fa)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/Resources/UnitySubsystems
@@ -70,61 +70,52 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56252
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56696
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.012962 seconds.
-- Loaded All Assemblies, in  0.485 seconds
+Registered in 0.008784 seconds.
+- Loaded All Assemblies, in  0.429 seconds
 Native extension for WindowsStandalone target not found
 [usbmuxd] Start listen thread
 [usbmuxd] Listen thread started
 [usbmuxd] Send listen message
 Native extension for iOS target not found
 Native extension for Android target not found
-CommandWithNoStdoutInvokationFailure: Unable to start ADB server. Please make sure the Android SDK is installed and is properly configured in the Editor. See the Console for more details.
-  at UnityEditor.Android.Command.RunWithShellExecute (System.String command, System.String args, System.String workingdir, System.String errorMsg) [0x00060] in <97a081096c004f46915413c5b9102bc4>:0 
-  at UnityEditor.Android.ADB.StartServer () [0x00013] in <97a081096c004f46915413c5b9102bc4>:0 
-  at UnityEditor.Android.ADB.Run (System.String[] command, UnityEditor.Android.Command+WaitingForProcessToExit waitingForProcessToExit, System.String errorMsg) [0x0000b] in <97a081096c004f46915413c5b9102bc4>:0 
-  at UnityEditor.Android.AndroidDeploymentTargetsExtension.GetKnownTargets (UnityEditor.DeploymentTargets.IDeploymentTargetsMainThreadContext context, UnityEditor.ProgressHandler progressHandler) [0x002ae] in <97a081096c004f46915413c5b9102bc4>:0 
-  at UnityEditor.Android.TargetScanWorker.ScanSync () [0x00039] in <97a081096c004f46915413c5b9102bc4>:0 
-  at UnityEditor.Android.TargetExtension.OnUsbDevicesChanged (UnityEditor.Hardware.UsbDevice[] usbDevices) [0x00081] in <97a081096c004f46915413c5b9102bc4>:0 
-  at UnityEditor.Android.TargetExtension.OnLoad () [0x000ad] in <97a081096c004f46915413c5b9102bc4>:0 
-  at UnityEditor.Modules.ModuleManager.InitializePlatformSupportModules () [0x0009d] in <3d611f181d2047d0a4666e5262482490>:0 
-
+Android Extension - Scanning For ADB Devices 660 ms
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  5.769 seconds
-Domain Reload Profiling: 6252ms
-	BeginReloadAssembly (121ms)
+- Finished resetting the current domain, in  1.030 seconds
+Domain Reload Profiling: 1457ms
+	BeginReloadAssembly (149ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
 	RebuildCommonClasses (35ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (66ms)
-	LoadAllAssembliesAndSetupDomain (251ms)
-		LoadAssemblies (119ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (59ms)
+	LoadAllAssembliesAndSetupDomain (175ms)
+		LoadAssemblies (146ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (248ms)
-			TypeCache.Refresh (246ms)
-				TypeCache.ScanAssembly (233ms)
+		AnalyzeDomain (172ms)
+			TypeCache.Refresh (171ms)
+				TypeCache.ScanAssembly (158ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (5769ms)
+	FinalizeReload (1030ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (5718ms)
+		SetupLoadedEditorAssemblies (966ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (5557ms)
+			InitializePlatformSupportModulesInManaged (793ms)
 			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (107ms)
-			ProcessInitializeOnLoadMethodAttributes (47ms)
+			ProcessInitializeOnLoadAttributes (109ms)
+			ProcessInitializeOnLoadMethodAttributes (57ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -132,364 +123,54 @@ Domain Reload Profiling: 6252ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.665 seconds
-Refreshing native plugins compatible for Editor in 2.20 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.633 seconds
+Refreshing native plugins compatible for Editor in 2.11 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for iOS target not found
 Native extension for Android target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.535 seconds
-Domain Reload Profiling: 1198ms
-	BeginReloadAssembly (160ms)
+- Finished resetting the current domain, in  0.537 seconds
+Domain Reload Profiling: 1169ms
+	BeginReloadAssembly (147ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (6ms)
+		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (24ms)
-	RebuildCommonClasses (41ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (41ms)
-	LoadAllAssembliesAndSetupDomain (410ms)
-		LoadAssemblies (293ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (203ms)
-			TypeCache.Refresh (183ms)
-				TypeCache.ScanAssembly (165ms)
-			ScanForSourceGeneratedMonoScriptInfo (14ms)
-			ResolveRequiredComponents (5ms)
-	FinalizeReload (535ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (370ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (48ms)
-			SetLoadedEditorAssemblies (4ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (54ms)
-			ProcessInitializeOnLoadAttributes (241ms)
-			ProcessInitializeOnLoadMethodAttributes (17ms)
-			AfterProcessingInitializeOnLoad (6ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (6ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 3.13 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3179 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (57.7 KB). Loaded Objects now: 3643.
-Memory consumption went from 130.3 MB to 130.3 MB.
-Total: 4.034300 ms (FindLiveObjects: 0.274800 ms CreateObjectMapping: 0.097500 ms MarkObjects: 3.526500 ms  DeleteObjects: 0.134200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 61735.664266 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'cb23bef42973d55dee1b201ee3309a37') in 0.002664 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.793293 seconds.
-  path: Assets/Scripts/SceneryObject.cs
-  artifactKey: Guid(0fa23f0feabe9884ea0b507abf05b1de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/SceneryObject.cs using Guid(0fa23f0feabe9884ea0b507abf05b1de) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '9473a54dd3de3c99684b2f925fced661') in 0.000531 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.748597 seconds.
-  path: Assets/Scripts/UnitLogic.cs
-  artifactKey: Guid(826ece57042ddb5489f5b8aee09fdc34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/UnitLogic.cs using Guid(826ece57042ddb5489f5b8aee09fdc34) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'a659d8ef3ade52199d54350d4fd1bf88') in 0.000463 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 4.071911 seconds.
-  path: Assets/Scripts/Classes.cs
-  artifactKey: Guid(8427bb18e641a1b49a76d96e8c16a9bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Classes.cs using Guid(8427bb18e641a1b49a76d96e8c16a9bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'df3be99f4586c9460f8f4826f1f47632') in 0.000512 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 63.491899 seconds.
-  path: Assets/Scripts/Classes.cs
-  artifactKey: Guid(8427bb18e641a1b49a76d96e8c16a9bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Classes.cs using Guid(8427bb18e641a1b49a76d96e8c16a9bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '83a801cc22f72a00c83b4c92446a595a') in 0.000454 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 29.457287 seconds.
-  path: Assets/Scripts/Classes.cs
-  artifactKey: Guid(8427bb18e641a1b49a76d96e8c16a9bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Classes.cs using Guid(8427bb18e641a1b49a76d96e8c16a9bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '335af8e9f4c1c83dc895470ddae31fef') in 0.000483 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.436 seconds
-Refreshing native plugins compatible for Editor in 1.82 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for iOS target not found
-Native extension for Android target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.960 seconds
-Domain Reload Profiling: 1394ms
-	BeginReloadAssembly (162ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (37ms)
-	RebuildCommonClasses (32ms)
+	RebuildCommonClasses (37ms)
 	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (35ms)
-	LoadAllAssembliesAndSetupDomain (193ms)
-		LoadAssemblies (262ms)
+	initialDomainReloadingComplete (38ms)
+	LoadAllAssembliesAndSetupDomain (398ms)
+		LoadAssemblies (296ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (23ms)
-			TypeCache.Refresh (9ms)
-				TypeCache.ScanAssembly (1ms)
-			ScanForSourceGeneratedMonoScriptInfo (6ms)
+		AnalyzeDomain (190ms)
+			TypeCache.Refresh (168ms)
+				TypeCache.ScanAssembly (148ms)
+			ScanForSourceGeneratedMonoScriptInfo (15ms)
 			ResolveRequiredComponents (5ms)
-	FinalizeReload (961ms)
+	FinalizeReload (538ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (326ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (35ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (53ms)
-			ProcessInitializeOnLoadAttributes (210ms)
-			ProcessInitializeOnLoadMethodAttributes (17ms)
-			AfterProcessingInitializeOnLoad (7ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (6ms)
-Refreshing native plugins compatible for Editor in 1.84 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3157 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 25 unused Assets / (31.7 KB). Loaded Objects now: 3646.
-Memory consumption went from 125.3 MB to 125.3 MB.
-Total: 2.613200 ms (FindLiveObjects: 0.258700 ms CreateObjectMapping: 0.104000 ms MarkObjects: 2.203300 ms  DeleteObjects: 0.046400 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.380 seconds
-Refreshing native plugins compatible for Editor in 2.06 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for iOS target not found
-Native extension for Android target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.904 seconds
-Domain Reload Profiling: 1282ms
-	BeginReloadAssembly (150ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (6ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (37ms)
-	RebuildCommonClasses (30ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (28ms)
-	LoadAllAssembliesAndSetupDomain (160ms)
-		LoadAssemblies (222ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (13ms)
-			TypeCache.Refresh (7ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (5ms)
-	FinalizeReload (904ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (470ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (47ms)
-			SetLoadedEditorAssemblies (5ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (71ms)
-			ProcessInitializeOnLoadAttributes (317ms)
-			ProcessInitializeOnLoadMethodAttributes (22ms)
-			AfterProcessingInitializeOnLoad (9ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (8ms)
-Refreshing native plugins compatible for Editor in 3.29 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3158 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 25 unused Assets / (31.6 KB). Loaded Objects now: 3649.
-Memory consumption went from 125.6 MB to 125.6 MB.
-Total: 2.784800 ms (FindLiveObjects: 0.255800 ms CreateObjectMapping: 0.093400 ms MarkObjects: 2.369400 ms  DeleteObjects: 0.065000 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.442 seconds
-Refreshing native plugins compatible for Editor in 2.22 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for iOS target not found
-Native extension for Android target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.780 seconds
-Domain Reload Profiling: 1220ms
-	BeginReloadAssembly (175ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (44ms)
-	RebuildCommonClasses (30ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (31ms)
-	LoadAllAssembliesAndSetupDomain (192ms)
-		LoadAssemblies (262ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (25ms)
-			TypeCache.Refresh (12ms)
-				TypeCache.ScanAssembly (1ms)
-			ScanForSourceGeneratedMonoScriptInfo (6ms)
-			ResolveRequiredComponents (5ms)
-	FinalizeReload (781ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (342ms)
+		SetupLoadedEditorAssemblies (380ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (40ms)
 			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (57ms)
-			ProcessInitializeOnLoadAttributes (217ms)
-			ProcessInitializeOnLoadMethodAttributes (17ms)
+			BeforeProcessingInitializeOnLoad (52ms)
+			ProcessInitializeOnLoadAttributes (260ms)
+			ProcessInitializeOnLoadMethodAttributes (18ms)
 			AfterProcessingInitializeOnLoad (6ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (6ms)
-Refreshing native plugins compatible for Editor in 2.15 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (5ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 1.89 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3158 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 25 unused Assets / (31.7 KB). Loaded Objects now: 3652.
-Memory consumption went from 125.6 MB to 125.6 MB.
-Total: 2.642000 ms (FindLiveObjects: 0.244400 ms CreateObjectMapping: 0.079000 ms MarkObjects: 2.262200 ms  DeleteObjects: 0.055300 ms)
+Unloading 3180 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 34 unused Assets / (58.0 KB). Loaded Objects now: 3644.
+Memory consumption went from 130.3 MB to 130.2 MB.
+Total: 4.181800 ms (FindLiveObjects: 0.409300 ms CreateObjectMapping: 0.203800 ms MarkObjects: 3.449100 ms  DeleteObjects: 0.117200 ms)
 
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.389 seconds
-Refreshing native plugins compatible for Editor in 2.15 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for iOS target not found
-Native extension for Android target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.714 seconds
-Domain Reload Profiling: 1101ms
-	BeginReloadAssembly (150ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (31ms)
-	RebuildCommonClasses (29ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (26ms)
-	LoadAllAssembliesAndSetupDomain (173ms)
-		LoadAssemblies (235ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (23ms)
-			TypeCache.Refresh (10ms)
-				TypeCache.ScanAssembly (1ms)
-			ScanForSourceGeneratedMonoScriptInfo (7ms)
-			ResolveRequiredComponents (5ms)
-	FinalizeReload (714ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (328ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (37ms)
-			SetLoadedEditorAssemblies (4ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (57ms)
-			ProcessInitializeOnLoadAttributes (206ms)
-			ProcessInitializeOnLoadMethodAttributes (17ms)
-			AfterProcessingInitializeOnLoad (6ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (6ms)
-Refreshing native plugins compatible for Editor in 1.88 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3158 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 25 unused Assets / (31.6 KB). Loaded Objects now: 3655.
-Memory consumption went from 125.6 MB to 125.6 MB.
-Total: 2.387900 ms (FindLiveObjects: 0.225800 ms CreateObjectMapping: 0.078700 ms MarkObjects: 2.030600 ms  DeleteObjects: 0.051800 ms)
-
-Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -505,465 +186,416 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 985.203897 seconds.
-  path: Assets/Scripts/InspectorCommanderDisplay.cs
-  artifactKey: Guid(4d392e8683b9de14bb08e85e12e86dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/InspectorCommanderDisplay.cs using Guid(4d392e8683b9de14bb08e85e12e86dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '476b0b06fd4a3718fb7dacdd7ce8a19b') in 0.006563 seconds
+  Time since last request: 340305.764504 seconds.
+  path: Assets/Selection Square.png
+  artifactKey: Guid(d8556ce8f3ad4f448b64f096ed0ee915) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Selection Square.png using Guid(d8556ce8f3ad4f448b64f096ed0ee915) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6c403854dc331bc00bb8c748b881d087') in 0.093106 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.402 seconds
-Refreshing native plugins compatible for Editor in 2.34 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for iOS target not found
-Native extension for Android target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.803 seconds
-Domain Reload Profiling: 1203ms
-	BeginReloadAssembly (146ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (6ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (32ms)
-	RebuildCommonClasses (29ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (31ms)
-	LoadAllAssembliesAndSetupDomain (184ms)
-		LoadAssemblies (241ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (22ms)
-			TypeCache.Refresh (9ms)
-				TypeCache.ScanAssembly (1ms)
-			ScanForSourceGeneratedMonoScriptInfo (6ms)
-			ResolveRequiredComponents (5ms)
-	FinalizeReload (803ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (395ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (40ms)
-			SetLoadedEditorAssemblies (4ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (59ms)
-			ProcessInitializeOnLoadAttributes (258ms)
-			ProcessInitializeOnLoadMethodAttributes (23ms)
-			AfterProcessingInitializeOnLoad (10ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
-Refreshing native plugins compatible for Editor in 1.97 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3158 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 25 unused Assets / (31.7 KB). Loaded Objects now: 3659.
-Memory consumption went from 125.4 MB to 125.3 MB.
-Total: 2.734700 ms (FindLiveObjects: 0.212800 ms CreateObjectMapping: 0.073800 ms MarkObjects: 2.389600 ms  DeleteObjects: 0.057600 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 23.603044 seconds.
-  path: Assets/Scripts/InspectorCommanderDisplay.cs
-  artifactKey: Guid(4d392e8683b9de14bb08e85e12e86dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/InspectorCommanderDisplay.cs using Guid(4d392e8683b9de14bb08e85e12e86dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'f5b6c97129586961a0ad7eec7f8ca9b5') in 0.002213 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 5.551489 seconds.
-  path: Assets/Scripts/InspectorCommanderDisplay.cs
-  artifactKey: Guid(4d392e8683b9de14bb08e85e12e86dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/InspectorCommanderDisplay.cs using Guid(4d392e8683b9de14bb08e85e12e86dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.000806 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/inspectorcommanderdisplay.cs in SourceAssetDB has modification time of '2025-03-18T18:33:17.0941785Z' while content on disk has modification time of '2025-03-18T18:33:17.2797059Z'
-  ERROR: Build asset version error: assets/scripts/inspectorcommanderdisplay.cs in SourceAssetDB has modification time of '2025-03-18T18:33:17.0941785Z' while content on disk has modification time of '2025-03-18T18:33:17.2797059Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.005256 seconds.
-  path: Assets/Scripts/InspectorCommanderDisplay.cs
-  artifactKey: Guid(4d392e8683b9de14bb08e85e12e86dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/InspectorCommanderDisplay.cs using Guid(4d392e8683b9de14bb08e85e12e86dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.000430 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/inspectorcommanderdisplay.cs in SourceAssetDB has modification time of '2025-03-18T18:33:17.0941785Z' while content on disk has modification time of '2025-03-18T18:33:17.2797059Z'
-  ERROR: Build asset version error: assets/scripts/inspectorcommanderdisplay.cs in SourceAssetDB has modification time of '2025-03-18T18:33:17.0941785Z' while content on disk has modification time of '2025-03-18T18:33:17.2797059Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.014383 seconds.
-  path: Assets/Scripts/InspectorCommanderDisplay.cs
-  artifactKey: Guid(4d392e8683b9de14bb08e85e12e86dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/InspectorCommanderDisplay.cs using Guid(4d392e8683b9de14bb08e85e12e86dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.000403 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/inspectorcommanderdisplay.cs in SourceAssetDB has modification time of '2025-03-18T18:33:17.0941785Z' while content on disk has modification time of '2025-03-18T18:33:17.2797059Z'
-  ERROR: Build asset version error: assets/scripts/inspectorcommanderdisplay.cs in SourceAssetDB has modification time of '2025-03-18T18:33:17.0941785Z' while content on disk has modification time of '2025-03-18T18:33:17.2797059Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.002430 seconds.
-  path: Assets/Scripts/InspectorCommanderDisplay.cs
-  artifactKey: Guid(4d392e8683b9de14bb08e85e12e86dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/InspectorCommanderDisplay.cs using Guid(4d392e8683b9de14bb08e85e12e86dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.000335 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/inspectorcommanderdisplay.cs in SourceAssetDB has modification time of '2025-03-18T18:33:17.0941785Z' while content on disk has modification time of '2025-03-18T18:33:17.2797059Z'
-  ERROR: Build asset version error: assets/scripts/inspectorcommanderdisplay.cs in SourceAssetDB has modification time of '2025-03-18T18:33:17.0941785Z' while content on disk has modification time of '2025-03-18T18:33:17.2797059Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.014876 seconds.
-  path: Assets/Scripts/InspectorCommanderDisplay.cs
-  artifactKey: Guid(4d392e8683b9de14bb08e85e12e86dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/InspectorCommanderDisplay.cs using Guid(4d392e8683b9de14bb08e85e12e86dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'c0a6d1ba14785de29671a322fa661f36') in 0.000471 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.425 seconds
-Refreshing native plugins compatible for Editor in 3.62 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for iOS target not found
-Native extension for Android target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.812 seconds
-Domain Reload Profiling: 1236ms
-	BeginReloadAssembly (154ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (31ms)
-	RebuildCommonClasses (29ms)
-	RebuildNativeTypeToScriptingClass (14ms)
-	initialDomainReloadingComplete (32ms)
-	LoadAllAssembliesAndSetupDomain (195ms)
-		LoadAssemblies (260ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (24ms)
-			TypeCache.Refresh (10ms)
-				TypeCache.ScanAssembly (1ms)
-			ScanForSourceGeneratedMonoScriptInfo (7ms)
-			ResolveRequiredComponents (6ms)
-	FinalizeReload (813ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (346ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (34ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (49ms)
-			ProcessInitializeOnLoadAttributes (228ms)
-			ProcessInitializeOnLoadMethodAttributes (23ms)
-			AfterProcessingInitializeOnLoad (8ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
-Refreshing native plugins compatible for Editor in 1.87 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3158 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 25 unused Assets / (31.8 KB). Loaded Objects now: 3662.
-Memory consumption went from 125.4 MB to 125.3 MB.
-Total: 2.624200 ms (FindLiveObjects: 0.226100 ms CreateObjectMapping: 0.079200 ms MarkObjects: 2.264100 ms  DeleteObjects: 0.054000 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 43.522301 seconds.
+  Time since last request: 2.065918 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '3379223e5680f8fb161959c63d5352c2') in 0.002109 seconds
+ -> (artifact id: '9854f7301536ba0e8627ee02484a31b1') in 0.000573 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 370.263069 seconds.
+  Time since last request: 64.319367 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'bcbb6543f59d706c27367075b95eac5d') in 0.000712 seconds
+ -> (artifact id: '4df324b134067a60a07fd63d7c0f0334') in 0.000609 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 95.658386 seconds.
+  Time since last request: 6.656669 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'a95ae1a8353c672261b307dd3b569733') in 0.000487 seconds
+ -> (artifact id: 'e918c915c8b4b009602c97ff41680d42') in 0.000633 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 42.021569 seconds.
+  Time since last request: 13.325860 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'aa1220440fb7fe97b19c7eff8a877784') in 0.000481 seconds
+ -> (artifact id: '75948deb1f7541ee45431e6edf0aedb5') in 0.000460 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 20.733501 seconds.
+  Time since last request: 6.306812 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '59e3714107670274b262bad84b0fced9') in 0.000500 seconds
+ -> (artifact id: 'fc4934f0cdf8c8449845878e14a83911') in 0.000409 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 5.516228 seconds.
+  Time since last request: 338.361321 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '3b5646ff8bec4fcf1a63a483b2f3c47c') in 0.000479 seconds
+ -> (artifact id: '8d791191507efb0e4fe83eb47fb5ec12') in 0.000669 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 43.638731 seconds.
+  Time since last request: 11.358002 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '91557a5890490d347ca6a61f4334a2fd') in 0.001242 seconds
+ -> (artifact id: '0f26a217c2508025be4470f100c82381') in 0.000562 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 168.419588 seconds.
+  Time since last request: 97.691443 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'cbf5eba324440c397b40542cd7b55f87') in 0.000645 seconds
+ -> (artifact id: '00bb76362755d702309c8c692d5152bd') in 0.000470 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 11.817154 seconds.
+  Time since last request: 82.958247 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '931337cca23872efea36865da83b5bc4') in 0.000544 seconds
+ -> (artifact id: '6c25e081e195b175ae67419a05c8011d') in 0.000595 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 725.226552 seconds.
+  Time since last request: 34.474302 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '45449ebbc3627d60c7fc58f21c32f9e6') in 0.000763 seconds
+ -> (artifact id: 'ac9699b0f795b59a634d8b5bb9c19c9e') in 0.000559 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 133.788570 seconds.
+  Time since last request: 8.901132 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '16f5347785aae5c881388f344c5ad956') in 0.000612 seconds
+ -> (artifact id: 'cf24fad474588afa18f39afa70aa66c7') in 0.000505 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 2.398384 seconds.
+  Time since last request: 14.258839 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '7b50edeb001028f65d0a258de11aa82e') in 0.000444 seconds
+ -> (artifact id: 'b57fa985046f1b9907bfef486b0d90e6') in 0.000461 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 158.533332 seconds.
+  Time since last request: 2.510236 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '8cdb607dd7a04eae38f335fbec45425e') in 0.000643 seconds
+ -> (artifact id: '6ba059808c3633fada160fcefd758d8b') in 0.000592 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 8.951048 seconds.
+  Time since last request: 5.267548 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '8e198ee42c5859400f8e1d2a15c1264c') in 0.000478 seconds
+ -> (artifact id: 'ad0656aeea41a2f04f6ac81f657fb69d') in 0.000428 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 41.961847 seconds.
+  Time since last request: 404.466741 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'd433eb4151999c4330fb9a0264ee5c3b') in 0.000451 seconds
+ -> (artifact id: '6e23ccdb7e80453fa55deaa1395074eb') in 0.000691 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 20.635447 seconds.
+  Time since last request: 1.178939 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '78152e31930ad87203b60b9c4507657c') in 0.000433 seconds
+ -> (artifact id: '4b1468bfb829fd0d8115c56375fb17e9') in 0.000433 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 1.079655 seconds.
+  Time since last request: 15.204439 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '991806962e00cd32655af985d28c4810') in 0.000456 seconds
+ -> (artifact id: 'fb6801df32fdbe5dfd11f3848a20e245') in 0.000414 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 250.920996 seconds.
+  Time since last request: 229.444445 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '957221b4e9b6e546e62bc0e1827c7978') in 0.000644 seconds
+ -> (artifact id: '29b9ebc696c843b7c1e979007f6d27dc') in 0.000589 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 127.348513 seconds.
+  Time since last request: 34.390101 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '017051b59d66549b8326fe5827a11278') in 0.000552 seconds
+ -> (artifact id: '70fd75f2f944fa0ef28ef16d064abcf3') in 0.000424 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 24.441625 seconds.
+  Time since last request: 41.761331 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '2d8bb3036cdf6dad1dc46f4ec1f77fad') in 0.000687 seconds
+ -> (artifact id: '5f4ce75f23d10964fbf91e3146a8dc1b') in 0.000544 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 22.519980 seconds.
+  Time since last request: 38.326707 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'e2402f80a666f3cdf455cfa17e70908b') in 0.000617 seconds
+ -> (artifact id: '437b75c48c1dc34f266113bce669d638') in 0.000435 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 14.932851 seconds.
+  Time since last request: 6.550239 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '17922751636f154ff4d344e478197430') in 0.000562 seconds
+ -> (artifact id: 'c82e842047efc52b3fddbb7de3cb6c4c') in 0.000519 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 5.670169 seconds.
+  Time since last request: 2.698215 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'fffdd636cb0d457d6851b21ec1710333') in 0.000822 seconds
+ -> (artifact id: '5539d0f7ff5588d9b60b8dda1888f206') in 0.000486 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 4.063815 seconds.
+  Time since last request: 18.267023 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '7cd299ad0618a2ca8e64230e3b0f748f') in 0.000818 seconds
+ -> (artifact id: 'b98244982d174188cb244f289b8a3e6e') in 0.000427 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 17.850399 seconds.
+  Time since last request: 12.473358 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '2d3d217cc450a73fc636116833d9f02a') in 0.000762 seconds
+ -> (artifact id: '40161a05a023073688e7dd43467ee553') in 0.000415 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 3.357860 seconds.
+  Time since last request: 26.214366 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'd27a53ea18b342ce443f2d2452fa2c14') in 0.000657 seconds
+ -> (artifact id: 'cc08643f84648fc23d0d2ec885c82bb3') in 0.000436 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 87.449600 seconds.
+  Time since last request: 2.906141 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'b7ee392927549e3049390114b887b790') in 0.000846 seconds
+ -> (artifact id: '7eac5e814dd04a24c95f5785c46be6bd') in 0.000505 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 1.768393 seconds.
+  Time since last request: 5.628734 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '8491e3be59eca1eb5c43922c9155e567') in 0.000676 seconds
+ -> (artifact id: 'af2af8ce2d7bfc13dfd471c3363e46d1') in 0.000429 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 16.585670 seconds.
+  Time since last request: 9.513734 seconds.
   path: Assets/Scripts/MapBuilder.cs
   artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'a9c8a6fae835d5027ce5f247a9a17fbf') in 0.000571 seconds
+ -> (artifact id: 'becef299cd6cfb9b7e0515a881cfdea5') in 0.000469 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 12.036746 seconds.
+  path: Assets/Scripts/MapBuilder.cs
+  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'dda1a33aa90aac15bf3926e0bd3bf055') in 0.000499 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 15.556549 seconds.
+  path: Assets/Scripts/MapBuilder.cs
+  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '66310e83c088b95d6d7f47be30a3fa14') in 0.000509 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 24.632585 seconds.
+  path: Assets/Scripts/MapBuilder.cs
+  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7c755270d3988e9ecf934dd9b17b6e51') in 0.000544 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 8.673119 seconds.
+  path: Assets/Scripts/MapBuilder.cs
+  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '80564bb6f846804df4bb2dc6b84c7819') in 0.000464 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 94.494486 seconds.
+  path: Assets/Scripts/MapBuilder.cs
+  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8e314a83f7a84c1e0d69b19c22ceecf4') in 0.000522 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 35.459042 seconds.
+  path: Assets/Scripts/MapBuilder.cs
+  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8721801c298d957d925a9f02964196e5') in 0.000694 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.967969 seconds.
+  path: Assets/Scripts/MapBuilder.cs
+  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd34d93047cb18f4de1d46cb753e4c361') in 0.000498 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 51.785489 seconds.
+  path: Assets/Scripts/MapBuilder.cs
+  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b276c9bd6b2e72f91894953cade3460d') in 0.000432 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 20.504327 seconds.
+  path: Assets/Scripts/MapBuilder.cs
+  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0944294558e64a0b238b0634f3ae98d1') in 0.000458 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 23.491385 seconds.
+  path: Assets/Scripts/MapBuilder.cs
+  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f72bc81292850f0d2360f0ac1015b060') in 0.000475 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 387.342762 seconds.
+  path: Assets/Scripts/MapBuilder.cs
+  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7333d320a48b49b436f5a6d4ac56ca00') in 0.000710 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 145.271179 seconds.
+  path: Assets/Scripts/MapBuilder.cs
+  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6cf46797d515fa100447339940da81d4') in 0.000561 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 35.723393 seconds.
+  path: Assets/Scripts/MapBuilder.cs
+  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '3a6c9bc156af709bf44a09ca56b93c73') in 0.000423 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.164437 seconds.
+  path: Assets/Scripts/MapBuilder.cs
+  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bf39c1cad931795a92c1009ac04dd06a') in 0.000430 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 55.626544 seconds.
+  path: Assets/Scripts/MapBuilder.cs
+  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '3178cce352e20fd1f17cb314148abc8d') in 0.000465 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 21.116126 seconds.
+  path: Assets/Scripts/MapBuilder.cs
+  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b477d6b81a3ae773774478ec1fe93bd5') in 0.000469 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
