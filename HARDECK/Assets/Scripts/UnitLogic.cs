@@ -20,6 +20,8 @@ public class UnitLogic : EntityBase
     void Start()
     {
         gameObject.name = $"[{allianceInt}] {unitName}";
+        tilemapPosition = new Vector3Int(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), Mathf.RoundToInt(transform.position.z));
+
     }
 
     // Update is called once per frame

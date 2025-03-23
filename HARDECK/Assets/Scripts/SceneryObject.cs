@@ -5,33 +5,26 @@ using UnityEngine;
 public class SceneryObject : EntityBase
 {
     [Header("Scenery Object Components")]
-    public bool groundTile;
+    public bool obstructive;
+    public bool pathable;
+
 
     private void Awake()
     {
-        // SET FLAGS
-        if (!groundTile)
-        {
-            flags.destructable = true;
-            flags.pathable = true;
-        }
+        flags.pathable = pathable;
 
         // SET INT POS
-        tilemapPosition = new Vector3Int (Mathf.RoundToInt( transform.position.x ), Mathf.RoundToInt(transform.position.y), Mathf.RoundToInt(transform.position.z));
+        tilemapPosition = new Vector3Int(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), Mathf.RoundToInt(transform.position.z));
 
-
-        if (groundTile)
+        if (entityType == EntityType.GroundTile)
         {
             gameObject.name = $"GroundTile {tilemapPosition}";
         }
 
+    }
 
-        // Logic to be executed for all non terrain scenery Objects vvvvvv
-        if (entityType == EntityType.SceneryObj && !groundTile)
-        {
-            
+    private void Start()
+    {
 
-
-        }
     }
 }

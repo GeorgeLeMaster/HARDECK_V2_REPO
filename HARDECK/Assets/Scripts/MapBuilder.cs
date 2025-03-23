@@ -8,28 +8,19 @@ using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.Assertions;
 
-public class TileDataStructure
+public class LL_TileDataStruct
 {
-
-    public TileDataStructure(Vector3Int posInput = default(Vector3Int), TileDataStructure connectedTileInput = null)
+    public LL_TileDataStruct(Vector3Int input_v, float input_h)
     {
-        tilemapPos = posInput;
-        connectedTile = connectedTileInput;
-        builtOn = false;
-
-        actualCost = -1f;
+        pos = input_v;
+        heuristic = input_h;
     }
 
-    public float actualCost;
-    public float heuristicCost;
+    public Vector3Int pos;
 
-    public Vector3Int tilemapPos;
+    public float heuristic;
 
-    public TileDataStructure connectedTile;
-
-    public bool builtOn;
-
-
+    public LL_TileDataStruct childTile;
 }
 
 public class MapBuilder : MonoBehaviour
@@ -52,13 +43,15 @@ public class MapBuilder : MonoBehaviour
         {
             Destroy(this);
         }
+
+        BuildMap();
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        // CALL THIS IN GAME MANAGER EVENTUALLY; MAP BUILD SHOULD HAVE CAALLED FUNCTIONS AND IMPORTANT MAP MEMBERS, NOT ACTUALL DO THE RUNTIME LOGIC ITSELF
-        BuildMap();
+
     }
 
     // Update is called once per frame
@@ -74,18 +67,99 @@ public class MapBuilder : MonoBehaviour
         // Build and texture ground tiles
         groundTiles = new SceneryObject[mapSize.x + 1, mapSize.y + 1, mapSize.z + 1];
         masterVoxelData = new MapVoxelData[mapSize.x + 1, mapSize.y + 1, mapSize.z + 1];
+
+        //for (int x = 0; x <= mapSize.x; x++)
+        //{
+        //    for (int y = 0; y <= mapSize.y; y++)
+        //    {
+        //        for (int z = 0; z <= mapSize.x; z++)
+        //        {
+        //            masterVoxelData[x, y, z] = new MapVoxelData();
+        //        }
+        //    }
+        //}
+
         SceneryObject[] grabbedTiles = GameObject.FindObjectsOfType<SceneryObject>();
 
         // Find all ground tiles and sort them into the groundTiles array
         foreach (SceneryObject g in grabbedTiles)
         {
-            if (g.groundTile)
+            if (g.entityType == EntityType.GroundTile)
             {
                 Vector3Int pos = g.tilemapPosition;
                 groundTiles[pos.x, pos.y, pos.z] = g;
+
+                masterVoxelData[pos.x, pos.y, pos.z] = new MapVoxelData();
+
+
                 masterVoxelData[pos.x, pos.y, pos.z].pathableStatus = PathableStatus.Pathable;
             }
+            
         }
+
+        foreach (SceneryObject g in grabbedTiles)
+        {
+
+            if (g.entityType == EntityType.SceneryObj)
+            {
+                Vector3Int pos = g.tilemapPosition;
+
+                Vector3 offsetpos = g.tilemapPosition + g.transform.forward;
+                Vector3Int pos2 = new Vector3Int((int)offsetpos.x, (int)offsetpos.y, (int)offsetpos.z);
+
+                if (masterVoxelData[pos.x, pos.y, pos.z] == null)
+                {
+                    masterVoxelData[pos.x, pos.y, pos.z] = new MapVoxelData();
+                }
+
+                masterVoxelData[pos.x, pos.y, pos.z].sceneryObjects.Add(g);
+                masterVoxelData[pos.x, pos.y, pos.z].pathableStatus = PathableStatus.Blocked_Pathable;
+
+                if (g.transform.forward == new Vector3(1,0,0))
+                {
+                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[2, 0] = true;
+                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[2, 1] = true;
+                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[2, 2] = true;
+
+                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[0, 0] = true;
+                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[0, 1] = true;
+                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[0, 2] = true;
+                }
+                else if (g.transform.forward == new Vector3(0, 0, 1))
+                {
+                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[0, 0] = true;
+                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[1, 0] = true;
+                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[2, 0] = true;
+
+                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[0, 2] = true;
+                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[1, 2] = true;
+                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[2, 2] = true;
+                }
+                else if (g.transform.forward == new Vector3(-1, 0, 0))
+                {
+                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[0, 0] = true;
+                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[0, 1] = true;
+                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[0, 2] = true;
+
+                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[2, 0] = true;
+                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[2, 1] = true;
+                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[2, 2] = true;
+                }
+                else if (g.transform.forward == new Vector3(0, 0, -1))
+                {
+                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[0, 2] = true;
+                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[1, 2] = true;
+                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[2, 2] = true;
+
+                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[0, 0] = true;
+                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[1, 0] = true;
+                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[2, 0] = true;
+                }
+
+            }
+
+        }
+
 
         // Tile them with their respective material
         #region Texture Tiling
@@ -122,19 +196,25 @@ public class MapBuilder : MonoBehaviour
 
     public List<Vector3Int> BuildPath(Vector3Int from, Vector3Int to)
     {
+        int panicInt = 0;
         List<Vector3Int> result = new List<Vector3Int>();
+        result.Add(from);
+        float pathCost = 0;
 
-        Vector3Int currentCheckPos;
-        Vector3Int bestNextPos = new Vector3Int(-1,-1,-1);
+        Vector3Int currentCheckPos = from;
 
         List<Vector3Int> closed = new List<Vector3Int>();
-        List<Vector3Int> open = new List<Vector3Int>();
-        open.Add(from);
+        List<Vector3Int> closed2 = new List<Vector3Int>();
+
+        LL_TileDataStruct listHead = new LL_TileDataStruct(new Vector3Int(-1,-1,-1), 999999);
+
         bool connected = true;
 
-        while (open.Count() != 0)
+        while (currentCheckPos != to && panicInt < 1000)
         {
-            currentCheckPos = open.First();
+            panicInt++;
+
+            float heursiticToBeat = 9999999;
 
             // Whats happening here is:
             // we will check all tiles in a 1 tile radius around the currentCheckPos tile
@@ -144,76 +224,107 @@ public class MapBuilder : MonoBehaviour
             {
                 for (int zOffset = -1; zOffset < 2; zOffset++)
                 {
-                    
-                    Vector3Int adjacentPos = new Vector3Int(currentCheckPos.x + xOffset, currentCheckPos.y, currentCheckPos.z + zOffset);
-                    // Gonna have to change this for ramps but oh well
-                    if (ValidatePosition(adjacentPos))
+                    if (zOffset == 0 || xOffset == 0)
                     {
-                        // If we're here, the tile is inside the map
-                        // now make sure it is pathable to 
 
-                        if (closed.Contains(adjacentPos))
+                        Vector3Int adjacentPos = new Vector3Int(currentCheckPos.x + xOffset, currentCheckPos.y, currentCheckPos.z + zOffset);
+                        // Gonna have to change this for ramps but oh well
+                        if (ValidatePosition(adjacentPos))
                         {
-                            connected = false;
-                            continue;
-                        }
+                            // If we're here, the tile is inside the map
+                            // now make sure it is pathable to 
+                            // && !(xOffset != 0 && zOffset != 0)
 
-                        // Little bit of logic here to check if its marked as pathable. if it is, then if moves past this code block. if not, we enter and see if we can still walk there
-                        if (masterVoxelData[adjacentPos.x, adjacentPos.y, adjacentPos.z].pathableStatus != PathableStatus.Pathable)
-                        {
-                            if (masterVoxelData[adjacentPos.x, adjacentPos.y, adjacentPos.z].pathableStatus == PathableStatus.Blocked_Pathable)
+                            connected = true;
+                            if (closed.Contains(adjacentPos))
                             {
-                                // if we get here, the tile is marked as blocked_pathable, meaning it is pathable when clear, but certain directions might still be pathable\
+                                connected = false;
 
-                                Vector2Int check = new Vector2Int(1 + currentCheckPos.x - adjacentPos.x, 1 + currentCheckPos.z - adjacentPos.z);
-                                if (masterVoxelData[adjacentPos.x, adjacentPos.y, adjacentPos.z].obstructedDirections[check.x, check.y])
+                            }
+
+
+
+                            if (masterVoxelData[adjacentPos.x, adjacentPos.y, adjacentPos.z] == null) { connected = false; }
+                            else
+                            {
+                                Vector3Int dir = currentCheckPos - adjacentPos;
+                                Vector2Int check = new Vector2Int(dir.x + 1, 1 - dir.z);
+
+                                if (masterVoxelData[adjacentPos.x, adjacentPos.y, adjacentPos.z].obstructedDirections[check.x, check.y] == true)
                                 {
                                     // if we get in here, that means the adjacent tile is blocking travel from currentCheckPos's direction
                                     connected = false;
                                 }
-                                else
+
+                            }
+
+                            if (connected)
+                            {
+                                // when we get down here, should mean its a valid pathable tile
+                                // now just check the cost and heuristic i think?
+
+                                // ok the theory
+                                // check all surrounding tile (which were already doing in this loop)
+                                // for each tile, find the heuristic cost 
+
+                                float adjHeuristic = (to - adjacentPos).magnitude;
+
+                                LL_TileDataStruct newLLS = new LL_TileDataStruct(adjacentPos, adjHeuristic);
+
+                                if (!closed2.Contains(adjacentPos))
                                 {
-                                    connected = true;
+                                    closed2.Add(adjacentPos);
+                                    if (listHead.pos == new Vector3Int(-1, -1, -1))
+                                    {
+                                        listHead = newLLS;
+                                    }
+                                    else if (listHead.heuristic > newLLS.heuristic)
+                                    {
+                                        newLLS.childTile = listHead;
+                                        listHead = newLLS;
+                                    }
+                                    else
+                                    {
+                                        LL_TileDataStruct checkLLS = listHead;
+                                        while (checkLLS.childTile != null)
+                                        {
+                                            if (newLLS.heuristic <= checkLLS.childTile.heuristic)
+                                            {
+                                                newLLS.childTile = checkLLS.childTile;
+                                                break;
+                                            }
+                                            checkLLS = checkLLS.childTile;
+                                        }
+                                        checkLLS.childTile = newLLS;
+                                    }
                                 }
-                            }
-                            else
-                            {
-                                // if we get HERE, that means we are neither pathble, nor blocked_pathable, and we can in no circumstances go here
-                                connected = false;
+                                //if (adjHeuristic < heursiticToBeat)
+                                //{
+                                //    bestNextPos = adjacentPos;
+                                //    heursiticToBeat = adjHeuristic;
+                                //}
 
                             }
                         }
-                        else
-                        {
-                            connected = true;
-                        }// <---- Pathable check
 
-
-                        if (connected)
-                        {
-                            // when we get down here, should mean its a valid pathable tile
-                            // now just check the cost and heuristic i think?
-
-                            // ok the theory
-                            // check all surrounding tile
-                            // for each tile, find the heuristic cost 
-                            // stich it into the open list inbetween the closest higher and lower heuristic costs
-
-                            float adjHeuristic = (to - adjacentPos).magnitude;
-
-                            for (int i = 0; i < open.Count; i++)
-                            {
-                                if (adjHeuristic >= open[i].)
-                            }
-
-                        }
                     }
-
                 }
-            }
+            } // <-- edges loop
+            Vector3Int bestNextPos = listHead.pos;
 
-            // Set its data point in the bool array to true so we dont grab it again
+            closed.Add(currentCheckPos);
+            
+            result.Insert(result.Count-1, bestNextPos);
+            currentCheckPos = bestNextPos;
+            listHead = listHead.childTile;
         }
+
+        if (panicInt >= 999)
+        {
+            Debug.Log("Unpathable");
+
+        }
+
 
         return result;
     }
@@ -222,184 +333,21 @@ public class MapBuilder : MonoBehaviour
     {
         bool result = true;
 
-        if (input.x < 0 || input.x > mapSize.x-1 || input.z < 0 || input.z > mapSize.z - 1 || input.y < 0 || input.y > mapSize.y - 1)
+        if (input.x < 0 || input.x > mapSize.x || input.z < 0 || input.z > mapSize.z || input.y < 0 || input.y > mapSize.y)
         {
             result = false;
         }
 
+
+
         return result;
     }
 
-
-
-    public List<Vector3Int> BuildPath2(Vector3Int from, Vector3Int to)
+    public Vector2Int ConvertV3toV2I(Vector3 input)
     {
+        Vector2Int result = new Vector2Int(Mathf.RoundToInt(input.x)+1, Mathf.RoundToInt(input.z)+1);
 
-        List<TileDataStructure> result = null;
-
-        List<TileDataStructure> tts = new List<TileDataStructure>();
-        List<Vector3Int> checkedPositions = new List<Vector3Int>();
-
-        TileDataStructure firstTile = new TileDataStructure(from, null);
-        firstTile.actualCost = 0;
-        firstTile.heuristicCost = (to - from).magnitude;
-
-        tts.Add(firstTile);
-        checkedPositions.Add(from);
-
-        int panicInt = 0;
-
-        while (result == null && panicInt < 100000)
-        {
-            // While we still have tiles to search
-            TileDataStructure checkTile = tts.First();
-            tts.Remove(checkTile);
-            TileDataStructure nextTile = new TileDataStructure();
-
-            float lowestCost = 1000000;
-
-            for (int x = -1; x < 2; x++)
-            {
-                for (int z = -1; z < 2; z++)
-                {
-                    int newX = checkTile.tilemapPos.x + x,
-                        newZ = checkTile.tilemapPos.z + z;
-
-                    if (masterVoxelData[newX, checkTile.tilemapPos.y, newZ].ob != "open")
-                    {
-                        continue;
-                    }
-
-                    if (newX < 0 || newX >= mapSize.x || newY < 0 || newY >= mapSize.y || (newY == 0 && newX == 0))
-                    {
-                        continue;
-                    }
-
-                    TileDataStructure t = new TileDataStructure();
-
-                    if (!checkedPositions.Contains(new Vector2Int(newX, newY)))
-                    {
-                        float costToAdd = 1;
-                        if (x != 0 && y != 0)
-                        {
-                            costToAdd = 1.42f;
-
-                        }
-                        //  Debug.Log($"checking {newX},{newY}");
-                        float heuristic = Mathf.Abs(Vector2.Distance(to, new Vector2Int(newX, newY)));
-
-                        if (checkTile.actualCost + costToAdd + heuristic < lowestCost)
-                        {
-                            nextTile.tilemapPos = new Vector2Int(newX, newY);
-                            nextTile.actualCost = checkTile.actualCost + costToAdd;
-                            nextTile.connectedTile = checkTile;
-                            lowestCost = checkTile.actualCost + costToAdd + heuristic;
-                        }
-                    }
-                }
-            }
-
-            if (nextTile.tilemapPos != closest_To)
-            {
-                // Debug.Log($"checking {nextTile.pos} next");
-                tts.Add(nextTile);
-                checkedPositions.Add(nextTile.tilemapPos);
-
-                lowestCost = 1000000;
-            }
-            else
-            {
-                Debug.Log($"path found. distance : {nextTile.actualCost}");
-
-                // build the path
-                TileDataStructure v = nextTile;
-                panicInt = 0;
-                result = new List<TileDataStructure>();
-                while (v.tilemapPos != closest_From && panicInt < 1000000)
-                {
-                    result.Add(v);
-                    nextTile = nextTile.connectedTile;
-                    v = nextTile;
-                }
-
-                break;
-
-            }
-            // find the tile with the cheapest combo of actual and heuristic cost
-
-            // from that tile, repeat above (excluding tiles in search queue already), set its previous to current tile, and add it to the search queue
-
-            // declare current tile as searchd, remove it from the search queue
-
-            panicInt++;
-        }
-
-
-
-
-        // build cleaner path
-
-        List<Vector3> finalResult = new List<Vector3>();
-        finalResult.Add(to);
-
-        // start at the TO position and work backwards
-        Vector2Int prevPoint = closest_To;
-        TileDataStructure checkPoint = result.First();
-        TileDataStructure lastCheckedTile = result.First();
-
-        panicInt = 0;
-
-        while (checkPoint.tilemapPos != closest_From && panicInt < 100000)
-        {
-            if (prevPoint.x == checkPoint.tilemapPos.x || prevPoint.y == checkPoint.tilemapPos.y)
-            {
-                // straight lines should be automatically clear right?
-                checkPoint = checkPoint.connectedTile;
-                panicInt++;
-
-                continue;
-
-            }
-
-            Vector2 dir = checkPoint.tilemapPos - prevPoint;
-            int iters = Mathf.CeilToInt(dir.magnitude);
-            dir.Normalize();
-
-            bool blocked = false;
-            for (int i = 1; i < iters; i++)
-            {
-
-
-                Vector2Int newPos = new Vector2Int(Mathf.RoundToInt((prevPoint + (dir * i)).x), Mathf.RoundToInt((prevPoint + (dir * i)).y));
-                if (tileStatusies[newPos.x, newPos.y] != "open")
-                {
-                    // we heeben ein serious problem
-                    blocked = true;
-                    break;
-                }
-                // maybe check the checktiles connected tile and do the same diagonal check as above?
-            }
-
-            if (blocked)
-            {
-                // this means the path is not clear 
-                // add lastcheckedtile to pathpoints as vector3
-                finalResult.Add(new Vector3(lastCheckedTile.tilemapPos.x, lastCheckedTile.tilemapPos.y, (float)(lastCheckedTile.tilemapPos.y / 10)));
-                // set prevpoint = lastcheckedtile
-                prevPoint = lastCheckedTile.tilemapPos;
-            }
-            else
-            {
-                lastCheckedTile = checkPoint;
-                checkPoint = checkPoint.connectedTile;
-
-            }
-            panicInt++;
-        }
-
-        //finalResult.Add();
-
-        return finalResult;
+        return result;
     }
 }
 

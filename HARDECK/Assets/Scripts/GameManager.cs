@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     Camera cam;
 
+    public bool controllsLocked = false;
+
     [Header("Player Commander Components")]
 
     public int allianceInt_player;
@@ -47,7 +49,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // SLOTTING VARIOUS ENTITIES INTO THEIR VARIABLES, WE'LL DEAL WITH THE LOGIC AFTER
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !controllsLocked)
         {
             RaycastHit hit;
             if (Physics.Raycast(cam.ScreenPointToRay(Input.mousePosition), out hit, 100f))
@@ -58,16 +60,28 @@ public class GameManager : MonoBehaviour
 
                     switch (hitEntity.entityType)
                     {
+                        case EntityType.GroundTile:
+
+                            SceneryObject hitGroundTile = hitEntity.GetComponent<SceneryObject>();
+                            if (hitGroundTile != null)
+                            {
+                                if (hitGroundTile.flags.pathable == true && ACDP_player.caster != null)
+                                {
+                                    ACDP_player.target_pos = hitGroundTile.tilemapPosition;
+                                }
+                            }
+
+                            break;
+
                         case EntityType.SceneryObj:
 
                             SceneryObject hitSceneryObject = hitEntity.GetComponent<SceneryObject>();
                             if (hitSceneryObject != null)
                             {
                                 // IF THE SCENERY OBJECTG WE'VE CLICKED ON IS A PATHABLE GROUND TILE...
-                                if (hitSceneryObject.groundTile)
+                                if (hitSceneryObject.flags.pathable == true && ACDP_player.caster != null)
                                 {
                                     ACDP_player.target_pos = hitSceneryObject.tilemapPosition;
-                                    Debug.Log($"Targeting {hitSceneryObject.tilemapPosition}");
                                 }
                             }
 
@@ -97,13 +111,13 @@ public class GameManager : MonoBehaviour
             }
 
             ACDP_player.abilityId = selectedAbility_player;
-            AbilitiesLibrary.DisplayACDPGFX(ACDP_player);
-            AbilitiesLibrary.DisplayAbilityPreGFX( ACDP_player );
+            AbilityManager.Instance.DisplayACDPGFX(ACDP_player);
+            AbilityManager.Instance.DisplayAbilityPreGFX( ACDP_player );
         } // <--- if (Input.GetMouseButtonDown(0))
     }
 
     public void TryCallAbiliy()
     {
-        AbilitiesLibrary.CallAbility(ACDP_player);
+        AbilityManager.Instance.CallAbility(ACDP_player);
     }
 }
