@@ -20,6 +20,8 @@ public class LL_TileDataStruct
 
     public float heuristic;
 
+    public LL_TileDataStruct parentTile;
+
     public LL_TileDataStruct childTile;
 }
 
@@ -121,9 +123,14 @@ public class MapBuilder : MonoBehaviour
                     masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[2, 1] = true;
                     masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[2, 2] = true;
 
-                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[0, 0] = true;
-                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[0, 1] = true;
-                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[0, 2] = true;
+                    if (ValidatePosition(pos2))
+                    {
+
+                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[0, 0] = true;
+                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[0, 1] = true;
+                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[0, 2] = true;
+
+                    }
                 }
                 else if (g.transform.forward == new Vector3(0, 0, 1))
                 {
@@ -131,9 +138,14 @@ public class MapBuilder : MonoBehaviour
                     masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[1, 0] = true;
                     masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[2, 0] = true;
 
-                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[0, 2] = true;
-                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[1, 2] = true;
-                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[2, 2] = true;
+                    if (ValidatePosition(pos2))
+                    {
+
+                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[0, 2] = true;
+                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[1, 2] = true;
+                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[2, 2] = true;
+
+                    }
                 }
                 else if (g.transform.forward == new Vector3(-1, 0, 0))
                 {
@@ -141,9 +153,14 @@ public class MapBuilder : MonoBehaviour
                     masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[0, 1] = true;
                     masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[0, 2] = true;
 
-                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[2, 0] = true;
-                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[2, 1] = true;
-                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[2, 2] = true;
+                    if (ValidatePosition(pos2))
+                    {
+
+                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[2, 0] = true;
+                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[2, 1] = true;
+                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[2, 2] = true;
+
+                    }
                 }
                 else if (g.transform.forward == new Vector3(0, 0, -1))
                 {
@@ -151,9 +168,14 @@ public class MapBuilder : MonoBehaviour
                     masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[1, 2] = true;
                     masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[2, 2] = true;
 
-                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[0, 0] = true;
-                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[1, 0] = true;
-                    masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[2, 0] = true;
+                    if (ValidatePosition(pos2))
+                    {
+
+                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[0, 0] = true;
+                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[1, 0] = true;
+                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[2, 0] = true;
+
+                    }
                 }
 
             }
@@ -202,6 +224,7 @@ public class MapBuilder : MonoBehaviour
         float pathCost = 0;
 
         Vector3Int currentCheckPos = from;
+        LL_TileDataStruct dst;
 
         List<Vector3Int> closed = new List<Vector3Int>();
         List<Vector3Int> closed2 = new List<Vector3Int>();
@@ -213,8 +236,7 @@ public class MapBuilder : MonoBehaviour
         while (currentCheckPos != to && panicInt < 1000)
         {
             panicInt++;
-
-            float heursiticToBeat = 9999999;
+            dst = new LL_TileDataStruct(currentCheckPos, 0);
 
             // Whats happening here is:
             // we will check all tiles in a 1 tile radius around the currentCheckPos tile
@@ -270,6 +292,8 @@ public class MapBuilder : MonoBehaviour
                                 float adjHeuristic = (to - adjacentPos).magnitude;
 
                                 LL_TileDataStruct newLLS = new LL_TileDataStruct(adjacentPos, adjHeuristic);
+                                newLLS.pos = adjacentPos;
+                                newLLS.parentTile = dst;
 
                                 if (!closed2.Contains(adjacentPos))
                                 {
@@ -286,6 +310,7 @@ public class MapBuilder : MonoBehaviour
                                     else
                                     {
                                         LL_TileDataStruct checkLLS = listHead;
+
                                         while (checkLLS.childTile != null)
                                         {
                                             if (newLLS.heuristic <= checkLLS.childTile.heuristic)
@@ -296,6 +321,8 @@ public class MapBuilder : MonoBehaviour
                                             checkLLS = checkLLS.childTile;
                                         }
                                         checkLLS.childTile = newLLS;
+                                        newLLS.parentTile = checkLLS;
+
                                     }
                                 }
                                 //if (adjHeuristic < heursiticToBeat)
@@ -314,9 +341,12 @@ public class MapBuilder : MonoBehaviour
 
             closed.Add(currentCheckPos);
             
-            result.Insert(result.Count-1, bestNextPos);
+            //result.Insert(result.Count-1, bestNextPos);
             currentCheckPos = bestNextPos;
-            listHead = listHead.childTile;
+            if (currentCheckPos != to)
+            {
+                listHead = listHead.childTile;
+            }
         }
 
         if (panicInt >= 999)
@@ -324,8 +354,14 @@ public class MapBuilder : MonoBehaviour
             Debug.Log("Unpathable");
 
         }
-
-
+        LL_TileDataStruct p = listHead;
+        result.Add(p.pos);
+        while (p.pos != from)
+        {
+            p = p.parentTile;
+            Debug.Log(p);
+            result.Add(p.pos);
+        }
         return result;
     }
 
