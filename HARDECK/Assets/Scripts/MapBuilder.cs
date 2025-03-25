@@ -7,6 +7,55 @@ using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.Assertions;
+using UnityEngine.EventSystems;
+using UnityEngine.TerrainTools;
+
+public class TileDataStruct
+{
+
+    public TileDataStruct() 
+    {
+        a = -1;
+        h = -1;
+        g = -1;
+
+        tilemapPos = new Vector3Int(-1, -1, -1);
+    }
+
+    public TileDataStruct(TileDataStruct input)
+    {
+        a = input.a;
+        h = input.h;
+        g = input.g;
+
+        pathParent = input.pathParent;
+        listChild = input.listChild;
+
+        tilemapPos = input.tilemapPos;
+    }
+
+    public float a;
+    public float h;
+    public float g;
+
+    public TileDataStruct pathParent;
+    public TileDataStruct listChild;
+
+    public Vector3Int tilemapPos;
+
+    public void Copy(TileDataStruct input)
+    {
+        a = input.a;
+        h = input.h;
+        g = input.g;
+
+        pathParent = input.pathParent;
+        listChild = input.listChild;
+
+        tilemapPos = input.tilemapPos;
+    }
+}
+
 
 public class LL_TileDataStruct
 {
@@ -220,65 +269,52 @@ public class MapBuilder : MonoBehaviour
     {
         int panicInt = 0;
         List<Vector3Int> result = new List<Vector3Int>();
-        result.Add(from);
-        float pathCost = 0;
 
-        Vector3Int currentCheckPos = from;
-        LL_TileDataStruct dst;
+        TileDataStruct checkTile = new TileDataStruct();
+        checkTile.tilemapPos = from;
+        checkTile.g = 0;
+        
+        checkTile.h = Vector3.Distance(to, from);
+        checkTile.a = checkTile.h;
+        Vector3Int checkPos = checkTile.tilemapPos;
 
-        List<Vector3Int> closed = new List<Vector3Int>();
-        List<Vector3Int> closed2 = new List<Vector3Int>();
+        List<TileDataStruct> closed = new List<TileDataStruct>();
+        List<Vector3Int> closedVecRef = new List<Vector3Int>();
+        List<Vector3Int> openVecRef = new List<Vector3Int>();
+        openVecRef.Add(checkPos);
 
-        LL_TileDataStruct listHead = new LL_TileDataStruct(new Vector3Int(-1,-1,-1), 999999);
+        TileDataStruct LLHT = checkTile;
 
-        bool connected = true;
-
-        while (currentCheckPos != to && panicInt < 1000)
+        while (checkPos != to && panicInt < 1000 & LLHT != null)
         {
-            panicInt++;
-            dst = new LL_TileDataStruct(currentCheckPos, 0);
 
-            // Whats happening here is:
-            // we will check all tiles in a 1 tile radius around the currentCheckPos tile
-            // gotta make sure they are a valid, within boundries, pathable from check tile
 
-            for (int xOffset = -1; xOffset < 2; xOffset++)
+            for (int xOffset = -1; xOffset < 2;)
             {
-                for (int zOffset = -1; zOffset < 2; zOffset++)
+                for (int zOffset = -1; zOffset < 2;)
                 {
-                    if (zOffset == 0 || xOffset == 0)
+                    if ((zOffset == 0 || xOffset == 0) && !(zOffset == 0 && xOffset == 0))
                     {
 
-                        Vector3Int adjacentPos = new Vector3Int(currentCheckPos.x + xOffset, currentCheckPos.y, currentCheckPos.z + zOffset);
+                        Vector3Int adjacentPos = new Vector3Int(checkPos.x + xOffset, checkPos.y, checkPos.z + zOffset);
+
                         // Gonna have to change this for ramps but oh well
-                        if (ValidatePosition(adjacentPos))
+                        if (ValidatePosition(adjacentPos) && !closedVecRef.Contains(adjacentPos) && !openVecRef.Contains(adjacentPos) && masterVoxelData[adjacentPos.x, adjacentPos.y, adjacentPos.z] != null)
                         {
-                            // If we're here, the tile is inside the map
-                            // now make sure it is pathable to 
-                            // && !(xOffset != 0 && zOffset != 0)
+                            // This bool reflects if our checks here return true or not
+                            bool connected = true;
 
-                            connected = true;
-                            if (closed.Contains(adjacentPos))
+                            Vector3Int dir = checkPos - adjacentPos;
+                            Vector2Int check = new Vector2Int(dir.x + 1, 1 - dir.z);
+
+                            if (masterVoxelData[adjacentPos.x, adjacentPos.y, adjacentPos.z].obstructedDirections[check.x, check.y] == true)
                             {
+                                // if we get in here, that means the adjacent tile is blocking travel from currentCheckPos's direction
                                 connected = false;
-
                             }
 
 
 
-                            if (masterVoxelData[adjacentPos.x, adjacentPos.y, adjacentPos.z] == null) { connected = false; }
-                            else
-                            {
-                                Vector3Int dir = currentCheckPos - adjacentPos;
-                                Vector2Int check = new Vector2Int(dir.x + 1, 1 - dir.z);
-
-                                if (masterVoxelData[adjacentPos.x, adjacentPos.y, adjacentPos.z].obstructedDirections[check.x, check.y] == true)
-                                {
-                                    // if we get in here, that means the adjacent tile is blocking travel from currentCheckPos's direction
-                                    connected = false;
-                                }
-
-                            }
 
                             if (connected)
                             {
@@ -289,80 +325,106 @@ public class MapBuilder : MonoBehaviour
                                 // check all surrounding tile (which were already doing in this loop)
                                 // for each tile, find the heuristic cost 
 
-                                float adjHeuristic = (to - adjacentPos).magnitude;
+                                openVecRef.Add(adjacentPos);
 
-                                LL_TileDataStruct newLLS = new LL_TileDataStruct(adjacentPos, adjHeuristic);
-                                newLLS.pos = adjacentPos;
-                                newLLS.parentTile = dst;
+                                TileDataStruct adjTile = new TileDataStruct();
+                                adjTile.tilemapPos = adjacentPos;
+                                adjTile.g = Vector3.Distance(adjacentPos, checkPos);
+                                adjTile.h = Vector3.Distance(to, adjacentPos);
+                                adjTile.a = adjTile.h + adjTile.g;
+                                adjTile.pathParent = checkTile;
 
-                                if (!closed2.Contains(adjacentPos))
+                                TileDataStruct iterator = LLHT;
+                                Debug.Log($"LLHT Pos:{LLHT.tilemapPos}, AdjPos:{adjacentPos}, CheckPos:{checkPos}, PanicInt:{panicInt}");
+
+
+
+                                if (adjTile.a < LLHT.a)
                                 {
-                                    closed2.Add(adjacentPos);
-                                    if (listHead.pos == new Vector3Int(-1, -1, -1))
+                                   // bumped = true;
+                                    adjTile.listChild = LLHT;
+                                    LLHT = adjTile;
+                                }
+                                else if (LLHT.listChild == null)
+                                {
+                                    LLHT.listChild = adjTile;
+                                }
+                                else
+                                {
+                                    while (iterator.listChild != null)
                                     {
-                                        listHead = newLLS;
-                                    }
-                                    else if (listHead.heuristic > newLLS.heuristic)
-                                    {
-                                        newLLS.childTile = listHead;
-                                        listHead = newLLS;
-                                    }
-                                    else
-                                    {
-                                        LL_TileDataStruct checkLLS = listHead;
-
-                                        while (checkLLS.childTile != null)
+                                        if (adjTile.a <= iterator.listChild.a)
                                         {
-                                            if (newLLS.heuristic <= checkLLS.childTile.heuristic)
-                                            {
-                                                newLLS.childTile = checkLLS.childTile;
-                                                break;
-                                            }
-                                            checkLLS = checkLLS.childTile;
+                                            adjTile.listChild = iterator.listChild;
+                                            iterator.listChild = adjTile;
+                                            break;
                                         }
-                                        checkLLS.childTile = newLLS;
-                                        newLLS.parentTile = checkLLS;
+                                        else
+                                        {
+                                            iterator = iterator.listChild;
+                                        }
+                                    }
 
+                                    if (iterator.listChild == null)
+                                    {
+                                        iterator.listChild = adjTile;
                                     }
                                 }
-                                //if (adjHeuristic < heursiticToBeat)
-                                //{
-                                //    bestNextPos = adjacentPos;
-                                //    heursiticToBeat = adjHeuristic;
-                                //}
 
                             }
                         }
 
                     }
+                    zOffset++;
                 }
+                xOffset++;
             } // <-- edges loop
-            Vector3Int bestNextPos = listHead.pos;
 
-            closed.Add(currentCheckPos);
-            
-            //result.Insert(result.Count-1, bestNextPos);
-            currentCheckPos = bestNextPos;
-            if (currentCheckPos != to)
+            if (!closedVecRef.Contains(checkPos))
             {
-                listHead = listHead.childTile;
+                closed.Add(checkTile);
+                closedVecRef.Add(checkPos);
+            }
+
+            if (checkTile == LLHT)
+            {
+                checkTile = LLHT.listChild;
+                LLHT = checkTile;
+            }
+            else
+            {
+                checkTile = LLHT;
+            }
+            // Debug.Log(LLHT.tilemapPos);
+            if (checkTile != null)
+            {
+                checkPos = checkTile.tilemapPos;
+                panicInt++;
+
+            }
+            else
+            {
+                panicInt = 100000;
             }
         }
 
         if (panicInt >= 999)
         {
             Debug.Log("Unpathable");
+            result.Clear();
+            result.Add(from);
+            return result;
+        }
 
-        }
-        LL_TileDataStruct p = listHead;
-        result.Add(p.pos);
-        while (p.pos != from)
+        TileDataStruct p = LLHT;
+        result.Add(LLHT.tilemapPos);
+        while (p.tilemapPos != from)
         {
-            p = p.parentTile;
-            Debug.Log(p);
-            result.Add(p.pos);
+            p = p.pathParent;
+            result.Add(p.tilemapPos);
         }
-        return result;
+        Debug.Log(result.Count);
+        return FlipList(result);
     }
 
     public bool ValidatePosition(Vector3Int input)
@@ -379,9 +441,14 @@ public class MapBuilder : MonoBehaviour
         return result;
     }
 
-    public Vector2Int ConvertV3toV2I(Vector3 input)
+    public List<Vector3Int> FlipList(List<Vector3Int> input)
     {
-        Vector2Int result = new Vector2Int(Mathf.RoundToInt(input.x)+1, Mathf.RoundToInt(input.z)+1);
+        List<Vector3Int> result = new List<Vector3Int>();
+        
+        for (int i = 0; i < input.Count; i++)
+        {
+            result.Add(input[input.Count-1-i]);
+        }
 
         return result;
     }

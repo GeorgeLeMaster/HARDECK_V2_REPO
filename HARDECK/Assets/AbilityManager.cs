@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AbilityManager : MonoBehaviour
@@ -116,13 +117,20 @@ public class AbilityManager : MonoBehaviour
 
                     timeElapsed += Time.deltaTime;
 
+                    if (path.Count == 1 && path[0] == ACDP.caster.tilemapPosition)
+                    {
+                        endConditions = true;
+                        break;
+                    }
+
                     if (Vector3.Distance(ACDP.caster.gameObject.transform.position, path.First()) > 0.005f)
                     {
                         ACDP.caster.gameObject.transform.position = Vector3.Lerp(prevPos, (Vector3Int)path.First(), timeElapsed/ACDP.caster.moveSpeed);
                     }
                     else
                     {
-                        if (Vector3.Distance(ACDP.caster.gameObject.transform.position, (Vector3Int)ACDP.target_pos) < 0.01f)
+                        path.Remove(path.First());
+                        if (path.Count == 0)
                         {
 
                             ACDP.caster.transform.position = (Vector3Int)ACDP.target_pos;
@@ -137,7 +145,11 @@ public class AbilityManager : MonoBehaviour
                         {
                             prevPos = ACDP.caster.transform.position;
                             timeElapsed = 0;
-                            path.Remove(path.First());
+
+                            if (path.Count() == 0)
+                            {
+                                break;
+                            }
                         }
                     }
 
