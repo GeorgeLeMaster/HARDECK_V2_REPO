@@ -304,10 +304,10 @@ public class MapBuilder : MonoBehaviour
                             // This bool reflects if our checks here return true or not
                             bool connected = true;
 
-                            Vector3Int dir = checkPos - adjacentPos;
-                            Vector2Int check = new Vector2Int(dir.x + 1, 1 - dir.z);
+                            Vector3Int dir = adjacentPos - checkPos;
+                            Vector2Int check = new Vector2Int(dir.x + 1, 1 - dir.z );
 
-                            if (masterVoxelData[adjacentPos.x, adjacentPos.y, adjacentPos.z].obstructedDirections[check.x, check.y] == true)
+                            if (masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[check.x, check.y] == true)
                             {
                                 // if we get in here, that means the adjacent tile is blocking travel from currentCheckPos's direction
                                 connected = false;
