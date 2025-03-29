@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
-using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.Assertions;
@@ -95,13 +94,13 @@ public class MapBuilder : MonoBehaviour
             Destroy(this);
         }
 
-        BuildMap();
 
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        BuildMap();
 
     }
 
@@ -116,19 +115,19 @@ public class MapBuilder : MonoBehaviour
         // Find and Tile Ground Tiles
 
         // Build and texture ground tiles
-        groundTiles = new SceneryObject[mapSize.x + 1, mapSize.y + 1, mapSize.z + 1];
-        masterVoxelData = new MapVoxelData[mapSize.x + 1, mapSize.y + 1, mapSize.z + 1];
+        groundTiles = new SceneryObject[mapSize.x, mapSize.y, mapSize.z];
+        masterVoxelData = new MapVoxelData[mapSize.x, mapSize.y, mapSize.z];
 
-        //for (int x = 0; x <= mapSize.x; x++)
-        //{
-        //    for (int y = 0; y <= mapSize.y; y++)
-        //    {
-        //        for (int z = 0; z <= mapSize.x; z++)
-        //        {
-        //            masterVoxelData[x, y, z] = new MapVoxelData();
-        //        }
-        //    }
-        //}
+        for (int x = 0; x < mapSize.x; x++)
+        {
+            for (int y = 0; y < mapSize.y; y++)
+            {
+                for (int z = 0; z < mapSize.x; z++)
+                {
+                    masterVoxelData[x, y, z] = new MapVoxelData();
+                }
+            }
+        }
 
         SceneryObject[] grabbedTiles = GameObject.FindObjectsOfType<SceneryObject>();
 
@@ -165,6 +164,10 @@ public class MapBuilder : MonoBehaviour
 
                 masterVoxelData[pos.x, pos.y, pos.z].sceneryObjects.Add(g);
                 masterVoxelData[pos.x, pos.y, pos.z].pathableStatus = PathableStatus.Blocked_Pathable;
+                if (ValidatePosition(pos2))
+                {
+                    masterVoxelData[pos2.x, pos2.y, pos2.z].pathableStatus = PathableStatus.Blocked_Pathable;
+                }
 
                 if (g.transform.forward == new Vector3(1,0,0))
                 {
@@ -241,10 +244,12 @@ public class MapBuilder : MonoBehaviour
         foreach (SceneryObject g in groundTiles)
         {
             if (g == null) { continue; }
+            if (g.entityType != EntityType.GroundTile) { continue; }
 
             xoffset = (g.tilemapPosition.x + tileRate) % tileRate;
             zoffset = (g.tilemapPosition.z + tileRate) % tileRate;
 
+            Debug.Log(g.tilemapPosition);
 
             g.gfxParent.GetComponent<Renderer>().material = Resources.Load($"MapResources/Tilesets/{g.tileset.ToString()}/GroundMat_{g.tileset.ToString()}", typeof(Material)) as Material;
 
@@ -299,7 +304,7 @@ public class MapBuilder : MonoBehaviour
                         Vector3Int adjacentPos = new Vector3Int(checkPos.x + xOffset, checkPos.y, checkPos.z + zOffset);
 
                         // Gonna have to change this for ramps but oh well
-                        if (ValidatePosition(adjacentPos) && !closedVecRef.Contains(adjacentPos) && !openVecRef.Contains(adjacentPos) && masterVoxelData[adjacentPos.x, adjacentPos.y, adjacentPos.z] != null)
+                        if (ValidatePosition(adjacentPos) && !closedVecRef.Contains(adjacentPos) && !openVecRef.Contains(adjacentPos) && (masterVoxelData[adjacentPos.x, adjacentPos.y, adjacentPos.z].pathableStatus == PathableStatus.Pathable || masterVoxelData[adjacentPos.x, adjacentPos.y, adjacentPos.z].pathableStatus == PathableStatus.Blocked_Pathable))
                         {
                             // This bool reflects if our checks here return true or not
                             bool connected = true;
@@ -431,7 +436,7 @@ public class MapBuilder : MonoBehaviour
     {
         bool result = true;
 
-        if (input.x < 0 || input.x > mapSize.x || input.z < 0 || input.z > mapSize.z || input.y < 0 || input.y > mapSize.y)
+        if (input.x < 0 || input.x > mapSize.x-1 || input.z < 0 || input.z > mapSize.z-1 || input.y < 0 || input.y > mapSize.y-1 || masterVoxelData[input.x, input.y, input.z] == null)
         {
             result = false;
         }

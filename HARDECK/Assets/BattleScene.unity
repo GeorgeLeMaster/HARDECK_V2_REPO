@@ -15229,7 +15229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac0a3620fcf3904ab2ecad39eeedada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapSize: {x: 7, y: 1, z: 13}
+  mapSize: {x: 8, y: 1, z: 13}
 --- !u!1 &1895504719
 GameObject:
   m_ObjectHideFlags: 0
