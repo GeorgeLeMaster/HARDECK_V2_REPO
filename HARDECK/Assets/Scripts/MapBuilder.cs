@@ -312,11 +312,53 @@ public class MapBuilder : MonoBehaviour
                             Vector3Int dir = adjacentPos - checkPos;
                             Vector2Int check = new Vector2Int(dir.x + 1, 1 - dir.z );
 
-                            if (masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[check.x, check.y] == true)
+                            //if (masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[check.x, check.y] == true)
+                            //{
+                            //    // if we get in here, that means the adjacent tile is blocking travel from currentCheckPos's direction
+                            //    connected = false;
+                            //}
+
+                            if (dir == new Vector3(1, 0, 0))
                             {
-                                // if we get in here, that means the adjacent tile is blocking travel from currentCheckPos's direction
-                                connected = false;
+                                if (
+                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[2, 0] == true ||
+                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[2, 1] == true ||
+                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[2, 2] == true
+                                )
+                                {
+                                    connected = false;
+                                }
                             }
+                            else if (dir == new Vector3(0, 0, 1))
+                            {
+                                if (
+                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[0, 0] == true ||
+                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[1, 0] == true ||
+                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[2, 0] == true
+                                    ) { connected = false; }
+
+                            }
+                            else if (dir == new Vector3(-1, 0, 0))
+                            {
+                                if (
+                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[0, 0] == true ||
+                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[0, 1] == true ||
+                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[0, 2] == true
+                                )
+                                { connected = false; }
+
+                            }
+                            else if (dir == new Vector3(0, 0, -1))
+                            {
+                                if (
+                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[0, 2] == true ||
+                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[1, 2] == true ||
+                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[2, 2] == true
+                                )
+                                { connected = false; }
+
+                            }
+
 
 
 
