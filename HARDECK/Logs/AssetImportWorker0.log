@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2022.3/staging' branch; Version is '2022.3.32f1 (c8300dc0a3fa) revision 13119501'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22631) 64bit Professional' Language: 'en' Physical Memory: 16085 MB
+OS: 'Windows 10  (10.0.19045) 64bit Education' Language: 'en' Physical Memory: 49064 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
@@ -11,13 +11,13 @@ C:\Program Files\Unity\Hub\Editor\2022.3.32f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-D:/Unity (D)/HARDECK_V2_REPO/HARDECK
+C:/HARDECK_V2_REPO/HARDECK
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-53337
-Successfully changed project path to: D:/Unity (D)/HARDECK_V2_REPO/HARDECK
-D:/Unity (D)/HARDECK_V2_REPO/HARDECK
+65093
+Successfully changed project path to: C:/HARDECK_V2_REPO/HARDECK
+C:/HARDECK_V2_REPO/HARDECK
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -49,73 +49,65 @@ D:/Unity (D)/HARDECK_V2_REPO/HARDECK
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [2472] Host "[IP] 172.18.176.1 [Port] 0 [Flags] 2 [Guid] 803490654 [EditorId] 803490654 [Version] 1048832 [Id] WindowsEditor(7,LeMasterMSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [48408] Host "[IP] 192.168.50.143 [Port] 0 [Flags] 2 [Guid] 2546537456 [EditorId] 2546537456 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-8OQLDGP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [2472] Host "[IP] 172.18.176.1 [Port] 0 [Flags] 2 [Guid] 803490654 [EditorId] 803490654 [Version] 1048832 [Id] WindowsEditor(7,LeMasterMSI) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [48408] Host "[IP] 192.168.50.143 [Port] 0 [Flags] 2 [Guid] 2546537456 [EditorId] 2546537456 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-8OQLDGP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
-Refreshing native plugins compatible for Editor in 6.17 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 10.26 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.32f1 (c8300dc0a3fa)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/Unity (D)/HARDECK_V2_REPO/HARDECK/Assets
+[Subsystems] Discovering subsystems at path C:/HARDECK_V2_REPO/HARDECK/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 3080 Laptop GPU (ID=0x249c)
+    Renderer: NVIDIA GeForce RTX 3060 Ti (ID=0x2489)
     Vendor:   NVIDIA
-    VRAM:     16191 MB
-    Driver:   31.0.15.4617
+    VRAM:     8024 MB
+    Driver:   32.0.15.6614
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56920
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56284
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.010816 seconds.
-- Loaded All Assemblies, in  0.537 seconds
+Registered in 0.009881 seconds.
+- Loaded All Assemblies, in  0.350 seconds
 Native extension for WindowsStandalone target not found
-[usbmuxd] Start listen thread
-[usbmuxd] Listen thread started
-[usbmuxd] Send listen message
-Native extension for iOS target not found
-Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 538 ms
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.979 seconds
-Domain Reload Profiling: 1514ms
-	BeginReloadAssembly (189ms)
+- Finished resetting the current domain, in  0.268 seconds
+Domain Reload Profiling: 616ms
+	BeginReloadAssembly (99ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (44ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (76ms)
-	LoadAllAssembliesAndSetupDomain (216ms)
-		LoadAssemblies (192ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (60ms)
+	LoadAllAssembliesAndSetupDomain (149ms)
+		LoadAssemblies (96ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (209ms)
-			TypeCache.Refresh (207ms)
-				TypeCache.ScanAssembly (187ms)
+		AnalyzeDomain (147ms)
+			TypeCache.Refresh (146ms)
+				TypeCache.ScanAssembly (131ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (1ms)
-	FinalizeReload (980ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (268ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (914ms)
+		SetupLoadedEditorAssemblies (212ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (687ms)
-			SetLoadedEditorAssemblies (4ms)
+			InitializePlatformSupportModulesInManaged (11ms)
+			SetLoadedEditorAssemblies (7ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (137ms)
-			ProcessInitializeOnLoadMethodAttributes (84ms)
+			ProcessInitializeOnLoadAttributes (149ms)
+			ProcessInitializeOnLoadMethodAttributes (44ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -123,56 +115,55 @@ Domain Reload Profiling: 1514ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.916 seconds
-Refreshing native plugins compatible for Editor in 2.00 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.556 seconds
+Refreshing native plugins compatible for Editor in 3.67 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
-Native extension for iOS target not found
-Native extension for Android target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.651 seconds
-Domain Reload Profiling: 1564ms
-	BeginReloadAssembly (211ms)
+- Finished resetting the current domain, in  0.510 seconds
+Domain Reload Profiling: 1062ms
+	BeginReloadAssembly (134ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
+		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (26ms)
-	RebuildCommonClasses (39ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (38ms)
-	LoadAllAssembliesAndSetupDomain (615ms)
-		LoadAssemblies (491ms)
+		CreateAndSetChildDomain (18ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (40ms)
+	LoadAllAssembliesAndSetupDomain (337ms)
+		LoadAssemblies (261ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (245ms)
-			TypeCache.Refresh (220ms)
-				TypeCache.ScanAssembly (197ms)
-			ScanForSourceGeneratedMonoScriptInfo (19ms)
+		AnalyzeDomain (156ms)
+			TypeCache.Refresh (138ms)
+				TypeCache.ScanAssembly (123ms)
+			ScanForSourceGeneratedMonoScriptInfo (12ms)
 			ResolveRequiredComponents (5ms)
-	FinalizeReload (652ms)
+	FinalizeReload (510ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (470ms)
+		SetupLoadedEditorAssemblies (378ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (39ms)
+			InitializePlatformSupportModulesInManaged (6ms)
 			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (58ms)
-			ProcessInitializeOnLoadAttributes (327ms)
-			ProcessInitializeOnLoadMethodAttributes (33ms)
+			ProcessInitializeOnLoadAttributes (281ms)
+			ProcessInitializeOnLoadMethodAttributes (19ms)
 			AfterProcessingInitializeOnLoad (9ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
-Refreshing native plugins compatible for Editor in 2.93 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (6ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 3.58 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3181 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (58.3 KB). Loaded Objects now: 3645.
-Memory consumption went from 130.4 MB to 130.3 MB.
-Total: 3.249700 ms (FindLiveObjects: 0.225900 ms CreateObjectMapping: 0.102900 ms MarkObjects: 2.763700 ms  DeleteObjects: 0.156000 ms)
+Unloading 3180 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 34 unused Assets / (58.6 KB). Loaded Objects now: 3641.
+Memory consumption went from 125.0 MB to 125.0 MB.
+Total: 2.536400 ms (FindLiveObjects: 0.269500 ms CreateObjectMapping: 0.241400 ms MarkObjects: 1.914500 ms  DeleteObjects: 0.110400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: e54d7ab0439102e2317fc1e4b246158d -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
   custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
@@ -186,703 +177,750 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1003151.482802 seconds.
-  path: Assets/Scripts
-  artifactKey: Guid(9d345516afc9dea41b901b5be593837f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts using Guid(9d345516afc9dea41b901b5be593837f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '57fa91a15858cea4ca6c3c548cad936a') in 0.002659 seconds
+  Time since last request: 599154.017301 seconds.
+  path: Assets/Movement Square.png
+  artifactKey: Guid(ecdb9b7e2519dc947b7c373b5be96479) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Movement Square.png using Guid(ecdb9b7e2519dc947b7c373b5be96479) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '664128c46b7d6933b2b22c79fae120bc') in 0.087673 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 12.141268 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '789a94ae29c70ad8835dc2028e17ecd8') in 0.000662 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 97.871112 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '682535f2fd9314ff15038a730439a8dc') in 0.001155 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 18.151975 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '81003138d4715782425811af3d00c59d') in 0.002010 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.883938 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.001442 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:47:03.4156766Z' while content on disk has modification time of '2025-03-29T15:47:03.5672332Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:47:03.4156766Z' while content on disk has modification time of '2025-03-29T15:47:03.5672332Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.018495 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.001974 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:47:03.4156766Z' while content on disk has modification time of '2025-03-29T15:47:03.5672332Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:47:03.4156766Z' while content on disk has modification time of '2025-03-29T15:47:03.5672332Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.098055 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.000663 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:47:03.4156766Z' while content on disk has modification time of '2025-03-29T15:47:03.5672332Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:47:03.4156766Z' while content on disk has modification time of '2025-03-29T15:47:03.5672332Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.005010 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.000671 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:47:03.4156766Z' while content on disk has modification time of '2025-03-29T15:47:03.5672332Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:47:03.4156766Z' while content on disk has modification time of '2025-03-29T15:47:03.5672332Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.100624 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'cfc4a8d9b2a46b53534462dcd6e47cc9') in 0.000943 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 19.397322 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'dd35c89c24678ab78f62ea259b36d319') in 0.000870 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 12.511114 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '87c891585c3a91c486779945af0a42e9') in 0.001736 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 3.426977 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'cc6b1adf1cf737cfdc7b78dc8d3370a9') in 0.000601 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 3.340931 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '5cd67d10b64d5b95af390b23976b1919') in 0.000984 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 2.160590 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'bc20fa10047569fec02d6605ad4cebd2') in 0.000683 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 2.720874 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'ef5328bdef7ce92701493613c236aff6') in 0.001381 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 3.244324 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '5a0841d97db6d11ba316f1412cbb67ec') in 0.000741 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 122.708262 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.001106 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:49:53.2789462Z' while content on disk has modification time of '2025-03-29T15:49:53.420972Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:49:53.2789462Z' while content on disk has modification time of '2025-03-29T15:49:53.420972Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.009679 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.000832 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:49:53.2789462Z' while content on disk has modification time of '2025-03-29T15:49:53.420972Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:49:53.2789462Z' while content on disk has modification time of '2025-03-29T15:49:53.420972Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.096259 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.000700 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:49:53.2789462Z' while content on disk has modification time of '2025-03-29T15:49:53.420972Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:49:53.2789462Z' while content on disk has modification time of '2025-03-29T15:49:53.420972Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.014682 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.000552 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:49:53.2789462Z' while content on disk has modification time of '2025-03-29T15:49:53.420972Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:49:53.2789462Z' while content on disk has modification time of '2025-03-29T15:49:53.420972Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.109963 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '0eff63483def6a67225dfde067a2adda') in 0.000930 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 13.865431 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '60aed9a8da60aba5892c2d9970f80543') in 0.000871 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 22.725996 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: 'd951a81315087dea7efbe0a6164e97ce') in 0.000776 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 11.390068 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '382510c68baaa292b60110730eacceb1') in 0.001242 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 57.577629 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.001745 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:51:39.0402034Z' while content on disk has modification time of '2025-03-29T15:51:39.2179737Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:51:39.0402034Z' while content on disk has modification time of '2025-03-29T15:51:39.2179737Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.013181 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.000886 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:51:39.0402034Z' while content on disk has modification time of '2025-03-29T15:51:39.2179737Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:51:39.0402034Z' while content on disk has modification time of '2025-03-29T15:51:39.2179737Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.106313 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.000907 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:51:39.0402034Z' while content on disk has modification time of '2025-03-29T15:51:39.2179737Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:51:39.0402034Z' while content on disk has modification time of '2025-03-29T15:51:39.2179737Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.023373 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.000664 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:51:39.0402034Z' while content on disk has modification time of '2025-03-29T15:51:39.2179737Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:51:39.0402034Z' while content on disk has modification time of '2025-03-29T15:51:39.2179737Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.091684 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '1a1e605124945279b73f3b194aefe705') in 0.000780 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 37.136314 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.001148 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:52:16.4794125Z' while content on disk has modification time of '2025-03-29T15:52:16.6774712Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:52:16.4794125Z' while content on disk has modification time of '2025-03-29T15:52:16.6774712Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.021582 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.002443 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:52:16.4794125Z' while content on disk has modification time of '2025-03-29T15:52:16.6774712Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:52:16.4794125Z' while content on disk has modification time of '2025-03-29T15:52:16.6774712Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.097611 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.000735 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:52:16.4794125Z' while content on disk has modification time of '2025-03-29T15:52:16.6774712Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:52:16.4794125Z' while content on disk has modification time of '2025-03-29T15:52:16.6774712Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.014614 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.000628 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:52:16.4794125Z' while content on disk has modification time of '2025-03-29T15:52:16.6774712Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:52:16.4794125Z' while content on disk has modification time of '2025-03-29T15:52:16.6774712Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.095754 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '9c84baa9cf9a0d1df247f7fc43c7a928') in 0.000857 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 23.190362 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.001224 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:52:39.8893558Z' while content on disk has modification time of '2025-03-29T15:52:40.0333768Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:52:39.8893558Z' while content on disk has modification time of '2025-03-29T15:52:40.0333768Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.009454 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.000724 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:52:39.8893558Z' while content on disk has modification time of '2025-03-29T15:52:40.0333768Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:52:39.8893558Z' while content on disk has modification time of '2025-03-29T15:52:40.0333768Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.109585 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.000787 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:52:39.8893558Z' while content on disk has modification time of '2025-03-29T15:52:40.1461901Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:52:39.8893558Z' while content on disk has modification time of '2025-03-29T15:52:40.1461901Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.022848 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.000628 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:52:39.8893558Z' while content on disk has modification time of '2025-03-29T15:52:40.1461901Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:52:39.8893558Z' while content on disk has modification time of '2025-03-29T15:52:40.1461901Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.094276 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '36e27327d3b8f8d771f7cd55f29bd7f4') in 0.001351 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 28.891605 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.001214 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:08.9575173Z' while content on disk has modification time of '2025-03-29T15:53:09.1356855Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:08.9575173Z' while content on disk has modification time of '2025-03-29T15:53:09.1356855Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.011673 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.001410 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:08.9575173Z' while content on disk has modification time of '2025-03-29T15:53:09.1356855Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:08.9575173Z' while content on disk has modification time of '2025-03-29T15:53:09.1356855Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.110706 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.000766 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:08.9575173Z' while content on disk has modification time of '2025-03-29T15:53:09.1356855Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:08.9575173Z' while content on disk has modification time of '2025-03-29T15:53:09.1356855Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.018502 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.000621 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:08.9575173Z' while content on disk has modification time of '2025-03-29T15:53:09.1356855Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:08.9575173Z' while content on disk has modification time of '2025-03-29T15:53:09.1356855Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.093027 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '60db28b15aab995d518bfccbc8f437cc') in 0.000937 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 17.330448 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.001201 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:26.6352948Z' while content on disk has modification time of '2025-03-29T15:53:26.7827626Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:26.6352948Z' while content on disk has modification time of '2025-03-29T15:53:26.7827626Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.014916 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.001412 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:26.6352948Z' while content on disk has modification time of '2025-03-29T15:53:26.7827626Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:26.6352948Z' while content on disk has modification time of '2025-03-29T15:53:26.7827626Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.125186 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.001450 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:26.6352948Z' while content on disk has modification time of '2025-03-29T15:53:26.7827626Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:26.6352948Z' while content on disk has modification time of '2025-03-29T15:53:26.7827626Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.013377 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.001509 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:26.6352948Z' while content on disk has modification time of '2025-03-29T15:53:26.7827626Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:26.6352948Z' while content on disk has modification time of '2025-03-29T15:53:26.7827626Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.114584 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '77ad240b39b71344eef429d20cf2fa81') in 0.000794 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 5.830750 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.000649 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:32.7479003Z' while content on disk has modification time of '2025-03-29T15:53:32.9226371Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:32.7479003Z' while content on disk has modification time of '2025-03-29T15:53:32.9226371Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.007273 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.000425 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:32.7479003Z' while content on disk has modification time of '2025-03-29T15:53:32.9226371Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:32.7479003Z' while content on disk has modification time of '2025-03-29T15:53:32.9226371Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.124121 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.001456 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:32.7479003Z' while content on disk has modification time of '2025-03-29T15:53:32.9226371Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:32.7479003Z' while content on disk has modification time of '2025-03-29T15:53:32.9226371Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.013012 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '00000000000000000000000000000000') in 0.000734 seconds
-Import Error Code:(4)
-Message: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:32.7479003Z' while content on disk has modification time of '2025-03-29T15:53:32.9226371Z'
-  ERROR: Build asset version error: assets/scripts/mapbuilder.cs in SourceAssetDB has modification time of '2025-03-29T15:53:32.7479003Z' while content on disk has modification time of '2025-03-29T15:53:32.9226371Z'
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.106690 seconds.
-  path: Assets/Scripts/MapBuilder.cs
-  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
- -> (artifact id: '590f9b35b7cc85d1063007c5c656f41a') in 0.001357 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 3
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.669 seconds
-Refreshing native plugins compatible for Editor in 3.52 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.409 seconds
+Refreshing native plugins compatible for Editor in 3.80 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
-Native extension for iOS target not found
-Native extension for Android target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.349 seconds
-Domain Reload Profiling: 2014ms
-	BeginReloadAssembly (238ms)
+- Finished resetting the current domain, in  0.868 seconds
+Domain Reload Profiling: 1273ms
+	BeginReloadAssembly (150ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (9ms)
+		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (54ms)
-	RebuildCommonClasses (52ms)
-	RebuildNativeTypeToScriptingClass (19ms)
-	initialDomainReloadingComplete (52ms)
-	LoadAllAssembliesAndSetupDomain (303ms)
-		LoadAssemblies (401ms)
+		CreateAndSetChildDomain (32ms)
+	RebuildCommonClasses (32ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (29ms)
+	LoadAllAssembliesAndSetupDomain (184ms)
+		LoadAssemblies (255ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (36ms)
-			TypeCache.Refresh (14ms)
-				TypeCache.ScanAssembly (1ms)
-			ScanForSourceGeneratedMonoScriptInfo (12ms)
-			ResolveRequiredComponents (8ms)
-	FinalizeReload (1350ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (593ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (51ms)
-			SetLoadedEditorAssemblies (5ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (75ms)
-			ProcessInitializeOnLoadAttributes (401ms)
-			ProcessInitializeOnLoadMethodAttributes (42ms)
-			AfterProcessingInitializeOnLoad (18ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (12ms)
-Refreshing native plugins compatible for Editor in 4.23 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3159 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 25 unused Assets / (31.7 KB). Loaded Objects now: 3648.
-Memory consumption went from 125.5 MB to 125.5 MB.
-Total: 4.168800 ms (FindLiveObjects: 0.345100 ms CreateObjectMapping: 0.236000 ms MarkObjects: 3.526600 ms  DeleteObjects: 0.059400 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.728 seconds
-Refreshing native plugins compatible for Editor in 3.10 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for iOS target not found
-Native extension for Android target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.287 seconds
-Domain Reload Profiling: 2011ms
-	BeginReloadAssembly (308ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (10ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (66ms)
-	RebuildCommonClasses (63ms)
-	RebuildNativeTypeToScriptingClass (19ms)
-	initialDomainReloadingComplete (52ms)
-	LoadAllAssembliesAndSetupDomain (282ms)
-		LoadAssemblies (439ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (22ms)
-			TypeCache.Refresh (9ms)
+		AnalyzeDomain (12ms)
+			TypeCache.Refresh (5ms)
 				TypeCache.ScanAssembly (0ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (11ms)
-	FinalizeReload (1287ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (868ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (545ms)
+		SetupLoadedEditorAssemblies (385ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (49ms)
-			SetLoadedEditorAssemblies (6ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (89ms)
-			ProcessInitializeOnLoadAttributes (362ms)
-			ProcessInitializeOnLoadMethodAttributes (29ms)
+			BeforeProcessingInitializeOnLoad (62ms)
+			ProcessInitializeOnLoadAttributes (281ms)
+			ProcessInitializeOnLoadMethodAttributes (21ms)
 			AfterProcessingInitializeOnLoad (11ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (8ms)
-Refreshing native plugins compatible for Editor in 3.22 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (7ms)
+Refreshing native plugins compatible for Editor in 3.95 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3160 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 25 unused Assets / (31.7 KB). Loaded Objects now: 3651.
-Memory consumption went from 125.7 MB to 125.7 MB.
-Total: 3.758300 ms (FindLiveObjects: 0.267300 ms CreateObjectMapping: 0.104700 ms MarkObjects: 3.324600 ms  DeleteObjects: 0.060400 ms)
+Unloading 3159 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (31.7 KB). Loaded Objects now: 3650.
+Memory consumption went from 125.2 MB to 125.2 MB.
+Total: 2.649300 ms (FindLiveObjects: 0.261200 ms CreateObjectMapping: 0.227400 ms MarkObjects: 2.117100 ms  DeleteObjects: 0.042900 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: e54d7ab0439102e2317fc1e4b246158d -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 503.151513 seconds.
+  path: Assets/Scripts
+  artifactKey: Guid(9d345516afc9dea41b901b5be593837f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts using Guid(9d345516afc9dea41b901b5be593837f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9a2ad74f42ecab680471d6cc17569a6f') in 0.002454 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.865296 seconds.
+  path: Assets/Scripts/MapBuilder.cs
+  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4dcde98a57b97d322be3603f0eb555e3') in 0.000493 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 21.049005 seconds.
+  path: Assets/Scripts/MapBuilder.cs
+  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1a03873c980c2b8f3283bb6e06b551f0') in 0.000497 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.412 seconds
+Refreshing native plugins compatible for Editor in 3.77 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.800 seconds
+Domain Reload Profiling: 1209ms
+	BeginReloadAssembly (143ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (32ms)
+	RebuildCommonClasses (30ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (30ms)
+	LoadAllAssembliesAndSetupDomain (196ms)
+		LoadAssemblies (252ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (20ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (6ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (800ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (338ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (54ms)
+			ProcessInitializeOnLoadAttributes (247ms)
+			ProcessInitializeOnLoadMethodAttributes (18ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 3.61 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3159 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (31.6 KB). Loaded Objects now: 3653.
+Memory consumption went from 125.2 MB to 125.2 MB.
+Total: 2.337900 ms (FindLiveObjects: 0.261600 ms CreateObjectMapping: 0.247300 ms MarkObjects: 1.788200 ms  DeleteObjects: 0.039500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: e54d7ab0439102e2317fc1e4b246158d -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.396 seconds
+Refreshing native plugins compatible for Editor in 5.27 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.852 seconds
+Domain Reload Profiling: 1245ms
+	BeginReloadAssembly (140ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (28ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (31ms)
+	LoadAllAssembliesAndSetupDomain (176ms)
+		LoadAssemblies (238ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (853ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (378ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (62ms)
+			ProcessInitializeOnLoadAttributes (272ms)
+			ProcessInitializeOnLoadMethodAttributes (23ms)
+			AfterProcessingInitializeOnLoad (10ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Refreshing native plugins compatible for Editor in 3.81 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3160 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (31.7 KB). Loaded Objects now: 3656.
+Memory consumption went from 125.5 MB to 125.4 MB.
+Total: 2.499000 ms (FindLiveObjects: 0.273000 ms CreateObjectMapping: 0.239000 ms MarkObjects: 1.942700 ms  DeleteObjects: 0.043300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: e54d7ab0439102e2317fc1e4b246158d -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.403 seconds
+Refreshing native plugins compatible for Editor in 3.56 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.787 seconds
+Domain Reload Profiling: 1187ms
+	BeginReloadAssembly (144ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (30ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (187ms)
+		LoadAssemblies (247ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (20ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (6ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (787ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (341ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (8ms)
+			SetLoadedEditorAssemblies (8ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (55ms)
+			ProcessInitializeOnLoadAttributes (243ms)
+			ProcessInitializeOnLoadMethodAttributes (17ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 3.83 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3160 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (31.8 KB). Loaded Objects now: 3659.
+Memory consumption went from 125.5 MB to 125.5 MB.
+Total: 2.353500 ms (FindLiveObjects: 0.282600 ms CreateObjectMapping: 0.254800 ms MarkObjects: 1.778000 ms  DeleteObjects: 0.037600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: e54d7ab0439102e2317fc1e4b246158d -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 94.003606 seconds.
+  path: Assets/Scripts/MapBuilder.cs
+  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6708874d7cadfbee9188aeedc98ab53a') in 0.004482 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.407 seconds
+Refreshing native plugins compatible for Editor in 3.61 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.801 seconds
+Domain Reload Profiling: 1204ms
+	BeginReloadAssembly (139ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (7ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (30ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (195ms)
+		LoadAssemblies (247ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (21ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (6ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (801ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (337ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (56ms)
+			ProcessInitializeOnLoadAttributes (244ms)
+			ProcessInitializeOnLoadMethodAttributes (17ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 3.55 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3159 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (31.7 KB). Loaded Objects now: 3662.
+Memory consumption went from 125.2 MB to 125.2 MB.
+Total: 2.472400 ms (FindLiveObjects: 0.258700 ms CreateObjectMapping: 0.228900 ms MarkObjects: 1.940000 ms  DeleteObjects: 0.044000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: e54d7ab0439102e2317fc1e4b246158d -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.396 seconds
+Refreshing native plugins compatible for Editor in 3.69 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.845 seconds
+Domain Reload Profiling: 1238ms
+	BeginReloadAssembly (138ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (28ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (33ms)
+	LoadAllAssembliesAndSetupDomain (182ms)
+		LoadAssemblies (243ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (846ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (386ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (62ms)
+			ProcessInitializeOnLoadAttributes (281ms)
+			ProcessInitializeOnLoadMethodAttributes (21ms)
+			AfterProcessingInitializeOnLoad (11ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Refreshing native plugins compatible for Editor in 4.50 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3160 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (31.7 KB). Loaded Objects now: 3665.
+Memory consumption went from 125.5 MB to 125.5 MB.
+Total: 2.879000 ms (FindLiveObjects: 0.305700 ms CreateObjectMapping: 0.249900 ms MarkObjects: 2.250100 ms  DeleteObjects: 0.072200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: e54d7ab0439102e2317fc1e4b246158d -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 89.823116 seconds.
+  path: Assets/Scripts/MapBuilder.cs
+  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1bdd960efa6268bf97e7f57722e16889') in 0.003755 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.407 seconds
+Refreshing native plugins compatible for Editor in 3.74 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.801 seconds
+Domain Reload Profiling: 1205ms
+	BeginReloadAssembly (144ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (31ms)
+	RebuildCommonClasses (40ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (181ms)
+		LoadAssemblies (237ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (21ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (6ms)
+			ResolveRequiredComponents (6ms)
+	FinalizeReload (801ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (347ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (55ms)
+			ProcessInitializeOnLoadAttributes (254ms)
+			ProcessInitializeOnLoadMethodAttributes (18ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Refreshing native plugins compatible for Editor in 3.48 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3159 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (31.7 KB). Loaded Objects now: 3668.
+Memory consumption went from 125.2 MB to 125.2 MB.
+Total: 2.466700 ms (FindLiveObjects: 0.268500 ms CreateObjectMapping: 0.240600 ms MarkObjects: 1.917400 ms  DeleteObjects: 0.039400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: e54d7ab0439102e2317fc1e4b246158d -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 11.922530 seconds.
+  path: Assets/Scripts/MapBuilder.cs
+  artifactKey: Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/MapBuilder.cs using Guid(3ac0a3620fcf3904ab2ecad39eeedada) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '43709ee8333c6d7808a031fccf26afe3') in 0.002621 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.400 seconds
+Refreshing native plugins compatible for Editor in 4.02 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.806 seconds
+Domain Reload Profiling: 1203ms
+	BeginReloadAssembly (142ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (35ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (188ms)
+		LoadAssemblies (239ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (23ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (6ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (806ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (337ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (56ms)
+			ProcessInitializeOnLoadAttributes (245ms)
+			ProcessInitializeOnLoadMethodAttributes (17ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Refreshing native plugins compatible for Editor in 3.68 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3159 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (31.8 KB). Loaded Objects now: 3671.
+Memory consumption went from 125.2 MB to 125.2 MB.
+Total: 2.568500 ms (FindLiveObjects: 0.294100 ms CreateObjectMapping: 0.256400 ms MarkObjects: 1.968200 ms  DeleteObjects: 0.049100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: e54d7ab0439102e2317fc1e4b246158d -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.395 seconds
+Refreshing native plugins compatible for Editor in 5.37 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.854 seconds
+Domain Reload Profiling: 1246ms
+	BeginReloadAssembly (142ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (31ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (182ms)
+		LoadAssemblies (245ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (14ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (854ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (383ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (61ms)
+			ProcessInitializeOnLoadAttributes (279ms)
+			ProcessInitializeOnLoadMethodAttributes (20ms)
+			AfterProcessingInitializeOnLoad (11ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Refreshing native plugins compatible for Editor in 4.19 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3160 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (31.7 KB). Loaded Objects now: 3674.
+Memory consumption went from 125.5 MB to 125.5 MB.
+Total: 2.661300 ms (FindLiveObjects: 0.308400 ms CreateObjectMapping: 0.241900 ms MarkObjects: 2.059500 ms  DeleteObjects: 0.050900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: e54d7ab0439102e2317fc1e4b246158d -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.396 seconds
+Refreshing native plugins compatible for Editor in 3.49 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.848 seconds
+Domain Reload Profiling: 1241ms
+	BeginReloadAssembly (145ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (30ms)
+	RebuildCommonClasses (36ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (173ms)
+		LoadAssemblies (241ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (12ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (849ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (384ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (63ms)
+			ProcessInitializeOnLoadAttributes (278ms)
+			ProcessInitializeOnLoadMethodAttributes (20ms)
+			AfterProcessingInitializeOnLoad (11ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Refreshing native plugins compatible for Editor in 3.89 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3160 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (31.6 KB). Loaded Objects now: 3677.
+Memory consumption went from 125.5 MB to 125.5 MB.
+Total: 2.872300 ms (FindLiveObjects: 0.340100 ms CreateObjectMapping: 0.337100 ms MarkObjects: 2.149400 ms  DeleteObjects: 0.044100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: e54d7ab0439102e2317fc1e4b246158d -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.392 seconds
+Refreshing native plugins compatible for Editor in 3.89 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.841 seconds
+Domain Reload Profiling: 1229ms
+	BeginReloadAssembly (139ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (27ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (30ms)
+	LoadAllAssembliesAndSetupDomain (179ms)
+		LoadAssemblies (244ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (841ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (383ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (64ms)
+			ProcessInitializeOnLoadAttributes (276ms)
+			ProcessInitializeOnLoadMethodAttributes (21ms)
+			AfterProcessingInitializeOnLoad (10ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Refreshing native plugins compatible for Editor in 4.19 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3160 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 25 unused Assets / (31.6 KB). Loaded Objects now: 3680.
+Memory consumption went from 125.5 MB to 125.5 MB.
+Total: 2.939700 ms (FindLiveObjects: 0.322600 ms CreateObjectMapping: 0.265200 ms MarkObjects: 2.302900 ms  DeleteObjects: 0.048200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: e54d7ab0439102e2317fc1e4b246158d -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
   custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 

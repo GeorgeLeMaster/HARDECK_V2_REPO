@@ -310,7 +310,7 @@ public class MapBuilder : MonoBehaviour
                             bool connected = true;
 
                             Vector3Int dir = adjacentPos - checkPos;
-                            Vector2Int check = new Vector2Int(dir.x + 1, 1 - dir.z );
+                            Vector2Int check = new Vector2Int(1 - dir.x, 1 + dir.z );
 
                             //if (masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[check.x, check.y] == true)
                             //{
@@ -321,9 +321,7 @@ public class MapBuilder : MonoBehaviour
                             if (dir == new Vector3(1, 0, 0))
                             {
                                 if (
-                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[2, 0] == true ||
-                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[2, 1] == true ||
-                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[2, 2] == true
+                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[2, 1] == true
                                 )
                                 {
                                     connected = false;
@@ -332,18 +330,14 @@ public class MapBuilder : MonoBehaviour
                             else if (dir == new Vector3(0, 0, 1))
                             {
                                 if (
-                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[0, 0] == true ||
-                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[1, 0] == true ||
-                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[2, 0] == true
+                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[1, 0] == true
                                     ) { connected = false; }
 
                             }
                             else if (dir == new Vector3(-1, 0, 0))
                             {
                                 if (
-                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[0, 0] == true ||
-                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[0, 1] == true ||
-                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[0, 2] == true
+                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[0, 1] == true
                                 )
                                 { connected = false; }
 
@@ -351,9 +345,7 @@ public class MapBuilder : MonoBehaviour
                             else if (dir == new Vector3(0, 0, -1))
                             {
                                 if (
-                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[0, 2] == true ||
-                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[1, 2] == true ||
-                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[2, 2] == true
+                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[1, 2] == true
                                 )
                                 { connected = false; }
 
