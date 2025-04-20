@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Windows;
 
 public class AbilityManager : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class AbilityManager : MonoBehaviour
                 case 0:
 
                     //MOVE
-
+                    GFXManager.instance.LR_movement.positionCount = 0;
                     StartCoroutine(ExecuteLongLogic(0, input));
                     break;
 
@@ -115,7 +116,7 @@ public class AbilityManager : MonoBehaviour
         return output;
     }
 
-    public IEnumerator ExecuteLongLogic(int abilityId, AbilityCallDataPackage ACDP)
+    public IEnumerator ExecuteLongLogic(int abilityId, AbilityCallDataPackage ACDP) // ------------------------------------------------------------------------------------------------------------ LONG LOGIC
     {
         GameManager.Instance.controllsLocked = true;
         bool endConditions = false;
@@ -137,6 +138,7 @@ public class AbilityManager : MonoBehaviour
                 case 0: // MOVE__________________________________________________
 
                     timeElapsed += Time.deltaTime;
+                    GameManager.Instance.selectedUnit_marker.transform.position = ACDP.caster.gameObject.transform.position;
 
                     if (path.Count == 1 && path[0] == ACDP.caster.tilemapPosition)
                     {
@@ -158,7 +160,7 @@ public class AbilityManager : MonoBehaviour
                             ACDP.caster.tilemapPosition = (Vector3Int)ACDP.target_pos;
 
                             ACDP.target_pos = null;
-                            ACDP.caster = null;
+
 
                             endConditions = true;
                         }

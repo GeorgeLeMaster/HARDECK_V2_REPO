@@ -16,7 +16,7 @@ public class GFXManager : MonoBehaviour
 
     void Start()
     {
-        
+        LR_movement.positionCount = 0;
     }
 
     // Update is called once per frame
