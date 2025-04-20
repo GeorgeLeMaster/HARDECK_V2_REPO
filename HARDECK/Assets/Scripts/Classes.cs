@@ -107,7 +107,7 @@ public class MapVoxelData
 
         sceneryObjects = new List<SceneryObject>();
 
-        obstructedDirections = new bool[3, 3];
+        obstructedDirections = new bool[4];
     }
 
     public PathableStatus pathableStatus;
@@ -118,6 +118,6 @@ public class MapVoxelData
 
     public List<SceneryObject> sceneryObjects;
 
-    public bool[,] obstructedDirections;
+    public bool[] obstructedDirections;
 }
 

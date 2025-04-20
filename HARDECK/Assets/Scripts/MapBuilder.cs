@@ -155,7 +155,7 @@ public class MapBuilder : MonoBehaviour
                 Vector3Int pos = g.tilemapPosition;
 
                 Vector3 offsetpos = g.tilemapPosition + g.transform.forward;
-                Vector3Int pos2 = new Vector3Int((int)offsetpos.x, (int)offsetpos.y, (int)offsetpos.z);
+                Vector3Int pos2 = new Vector3Int(Mathf.RoundToInt( offsetpos.x ), Mathf.RoundToInt( offsetpos.y ), Mathf.RoundToInt(offsetpos.z));
 
                 if (masterVoxelData[pos.x, pos.y, pos.z] == null)
                 {
@@ -163,72 +163,26 @@ public class MapBuilder : MonoBehaviour
                 }
 
                 masterVoxelData[pos.x, pos.y, pos.z].sceneryObjects.Add(g);
+
+                int i1 = DirToObstructionIndex(g.transform.forward);
+                if (i1 != -1)
+                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[i1] = true;
                 masterVoxelData[pos.x, pos.y, pos.z].pathableStatus = PathableStatus.Blocked_Pathable;
+
+
+                if (masterVoxelData[pos2.x, pos2.y, pos2.z] == null)
+                {
+                    masterVoxelData[pos2.x, pos2.y, pos2.z] = new MapVoxelData();
+                }
+
                 if (ValidatePosition(pos2))
                 {
+                    int i2 = DirToObstructionIndex(-g.transform.forward);
+                    if (i2 != -1)
+                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[i2] = true;
                     masterVoxelData[pos2.x, pos2.y, pos2.z].pathableStatus = PathableStatus.Blocked_Pathable;
                 }
-
-                if (g.transform.forward == new Vector3(1,0,0))
-                {
-                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[2, 0] = true;
-                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[2, 1] = true;
-                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[2, 2] = true;
-
-                    if (ValidatePosition(pos2))
-                    {
-
-                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[0, 0] = true;
-                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[0, 1] = true;
-                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[0, 2] = true;
-
-                    }
-                }
-                else if (g.transform.forward == new Vector3(0, 0, 1))
-                {
-                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[0, 0] = true;
-                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[1, 0] = true;
-                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[2, 0] = true;
-
-                    if (ValidatePosition(pos2))
-                    {
-
-                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[0, 2] = true;
-                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[1, 2] = true;
-                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[2, 2] = true;
-
-                    }
-                }
-                else if (g.transform.forward == new Vector3(-1, 0, 0))
-                {
-                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[0, 0] = true;
-                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[0, 1] = true;
-                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[0, 2] = true;
-
-                    if (ValidatePosition(pos2))
-                    {
-
-                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[2, 0] = true;
-                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[2, 1] = true;
-                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[2, 2] = true;
-
-                    }
-                }
-                else if (g.transform.forward == new Vector3(0, 0, -1))
-                {
-                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[0, 2] = true;
-                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[1, 2] = true;
-                    masterVoxelData[pos.x, pos.y, pos.z].obstructedDirections[2, 2] = true;
-
-                    if (ValidatePosition(pos2))
-                    {
-
-                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[0, 0] = true;
-                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[1, 0] = true;
-                        masterVoxelData[pos2.x, pos2.y, pos2.z].obstructedDirections[2, 0] = true;
-
-                    }
-                }
+            
 
             }
 
@@ -310,47 +264,20 @@ public class MapBuilder : MonoBehaviour
                             bool connected = true;
 
                             Vector3Int dir = adjacentPos - checkPos;
-                            Vector2Int check = new Vector2Int(1 - dir.x, 1 + dir.z );
-
+                            int index = DirToObstructionIndex(dir);
                             //if (masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[check.x, check.y] == true)
                             //{
                             //    // if we get in here, that means the adjacent tile is blocking travel from currentCheckPos's direction
                             //    connected = false;
                             //}
 
-                            if (dir == new Vector3(1, 0, 0))
+                            if (masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[index] == true)
                             {
-                                if (
-                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[2, 1] == true
-                                )
-                                {
-                                    connected = false;
-                                }
-                            }
-                            else if (dir == new Vector3(0, 0, 1))
-                            {
-                                if (
-                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[1, 0] == true
-                                    ) { connected = false; }
+
+                                connected = false;
+
 
                             }
-                            else if (dir == new Vector3(-1, 0, 0))
-                            {
-                                if (
-                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[0, 1] == true
-                                )
-                                { connected = false; }
-
-                            }
-                            else if (dir == new Vector3(0, 0, -1))
-                            {
-                                if (
-                                masterVoxelData[checkPos.x, checkPos.y, checkPos.z].obstructedDirections[1, 2] == true
-                                )
-                                { connected = false; }
-
-                            }
-
 
 
 
@@ -377,8 +304,11 @@ public class MapBuilder : MonoBehaviour
                                 Debug.Log($"LLHT Pos:{LLHT.tilemapPos}, AdjPos:{adjacentPos}, CheckPos:{checkPos}, PanicInt:{panicInt}");
 
 
+                                // ALTERNATIVE FOR SIMPLE LIST
+                                bool simpleList = false;
 
-                                if (adjTile.a < LLHT.a)
+                                // Linked list logic
+                                if (adjTile.a < LLHT.a || simpleList)
                                 {
                                    // bumped = true;
                                     adjTile.listChild = LLHT;
@@ -410,6 +340,7 @@ public class MapBuilder : MonoBehaviour
                                     }
                                 }
 
+                                
                             }
                         }
 
@@ -487,6 +418,36 @@ public class MapBuilder : MonoBehaviour
         for (int i = 0; i < input.Count; i++)
         {
             result.Add(input[input.Count-1-i]);
+        }
+
+        return result;
+    }
+
+    public int DirToObstructionIndex(Vector3 dir)
+    {
+        int result = 0;
+
+        if (dir == new Vector3(0,0,1))
+        {
+            result = 0;
+        }
+        else if (dir == new Vector3(1,0,0))
+        {
+            result = 1;
+
+        }
+        else if (dir == new Vector3(0, 0, -1))
+        {
+            result = 2;
+
+        }
+        else if (dir == new Vector3(-1, 0, 0))
+        {
+            result = 3;
+        }
+        else
+        {
+            result = -1;
         }
 
         return result;
