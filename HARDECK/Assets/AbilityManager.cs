@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -38,7 +40,26 @@ public class AbilityManager : MonoBehaviour
 
     public void DisplayAbilityPreGFX(AbilityCallDataPackage input)
     {
+        switch(input.abilityId)
+        {
+            case 0:
+                Vector3 offset = new Vector3 ( 0, 0.05f, 0);
+                List<Vector3Int> path = MapBuilder.instance.BuildPath(input.caster.tilemapPosition, (Vector3Int)input.target_pos);
 
+                GFXManager.instance.LR_movement.positionCount = path.Count();
+                for (int i = 0; i < path.Count; i++)
+                {
+                    GFXManager.instance.LR_movement.SetPosition(i, path[i] + offset);
+                }
+
+                Vector3 pos1 = path[0] + (new Vector3((path[1] - path[0]).x, (path[1] - path[0]).y, (path[1] - path[0]).z) * 0.5f);
+                GFXManager.instance.LR_movement.SetPosition(0, pos1 + offset);
+
+                Vector3 pos2 = path[path.Count-1] - (new Vector3((path[path.Count - 1] - path[path.Count - 2]).x, (path[path.Count - 1] - path[path.Count - 2]).y, (path[path.Count - 1] - path[path.Count - 2]).z) * 0.5f);
+                GFXManager.instance.LR_movement.SetPosition(path.Count-1, pos2 + offset);
+
+                break;
+        }
     }
 
     public void DisplayACDPGFX(AbilityCallDataPackage input)

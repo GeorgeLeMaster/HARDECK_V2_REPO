@@ -294,9 +294,15 @@ public class MapBuilder : MonoBehaviour
                                 openVecRef.Add(adjacentPos);
 
                                 TileDataStruct adjTile = new TileDataStruct();
+
+
+                                float h_add;
+                                h_add = 0;
+
+
                                 adjTile.tilemapPos = adjacentPos;
                                 adjTile.g = Vector3.Distance(adjacentPos, checkPos);
-                                adjTile.h = Vector3.Distance(to, adjacentPos);
+                                adjTile.h = Vector3.Distance(to, adjacentPos) + h_add;
                                 adjTile.a = adjTile.h + adjTile.g;
                                 adjTile.pathParent = checkTile;
 
