@@ -143,6 +143,7 @@ public class MapBuilder : MonoBehaviour
 
 
                 masterVoxelData[pos.x, pos.y, pos.z].pathableStatus = PathableStatus.Pathable;
+                g.flags.pathable = true;
             }
             
         }
@@ -191,7 +192,7 @@ public class MapBuilder : MonoBehaviour
 
         // Tile them with their respective material
         #region Texture Tiling
-        float tileRate = 2f;
+        float tileRate = 1f;
         float xoffset;
         float zoffset;
 
@@ -203,7 +204,7 @@ public class MapBuilder : MonoBehaviour
             xoffset = (g.tilemapPosition.x + tileRate) % tileRate;
             zoffset = (g.tilemapPosition.z + tileRate) % tileRate;
 
-            Debug.Log(g.tilemapPosition);
+            //Debug.Log(g.tilemapPosition);
 
             g.gfxParent.GetComponent<Renderer>().material = Resources.Load($"MapResources/Tilesets/{g.tileset.ToString()}/GroundMat_{g.tileset.ToString()}", typeof(Material)) as Material;
 
@@ -224,8 +225,10 @@ public class MapBuilder : MonoBehaviour
 
     }
 
-    public List<Vector3Int> BuildPath(Vector3Int from, Vector3Int to)
+    public PathObject BuildPath(Vector3Int from, Vector3Int to)
     {
+        PathObject newPath = new PathObject();
+
         int panicInt = 0;
         List<Vector3Int> result = new List<Vector3Int>();
 
@@ -302,12 +305,22 @@ public class MapBuilder : MonoBehaviour
 
                                 adjTile.tilemapPos = adjacentPos;
                                 adjTile.g = Vector3.Distance(adjacentPos, checkPos);
+
+                                // Incentivises straight lines
+                                //if (checkTile.pathParent != null)
+                                //{
+                                //    if (checkTile.pathParent.tilemapPos - checkTile.tilemapPos != checkTile.tilemapPos - adjacentPos)
+                                //    {
+                                //        adjTile.g += 1;
+                                //    }
+                                //}
+
                                 adjTile.h = Vector3.Distance(to, adjacentPos) + h_add;
                                 adjTile.a = adjTile.h + adjTile.g;
                                 adjTile.pathParent = checkTile;
 
                                 TileDataStruct iterator = LLHT;
-                                Debug.Log($"LLHT Pos:{LLHT.tilemapPos}, AdjPos:{adjacentPos}, CheckPos:{checkPos}, PanicInt:{panicInt}");
+                                //Debug.Log($"LLHT Pos:{LLHT.tilemapPos}, AdjPos:{adjacentPos}, CheckPos:{checkPos}, PanicInt:{panicInt}");
 
 
                                 // ALTERNATIVE FOR SIMPLE LIST
@@ -389,7 +402,8 @@ public class MapBuilder : MonoBehaviour
             Debug.Log("Unpathable");
             result.Clear();
             result.Add(from);
-            return result;
+            newPath.valid = false;
+            return newPath;
         }
 
         TileDataStruct p = LLHT;
@@ -399,8 +413,13 @@ public class MapBuilder : MonoBehaviour
             p = p.pathParent;
             result.Add(p.tilemapPos);
         }
-        Debug.Log(result.Count);
-        return FlipList(result);
+        //Debug.Log(result.Count);
+        result = FlipList(result);
+        newPath.origin = from;
+        newPath.destination = to;
+        newPath.valid = true;
+        newPath.positions = result;
+        return newPath;
     }
 
     public bool ValidatePosition(Vector3Int input)

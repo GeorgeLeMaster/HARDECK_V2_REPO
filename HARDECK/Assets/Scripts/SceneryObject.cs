@@ -5,6 +5,7 @@ using UnityEngine;
 public class SceneryObject : EntityBase
 {
     [Header("Scenery Object Components")]
+    public bool terrainCube;
     public bool obstructive;
     public bool pathable;
 

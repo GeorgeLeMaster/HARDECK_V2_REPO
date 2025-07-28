@@ -1,3 +1,5 @@
+using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -34,6 +36,7 @@ public enum PathableStatus
 public enum Tileset
 {
     Desert,
+    Bricks,
     Undeclared
 }
 
@@ -42,6 +45,62 @@ public class Commander
     public int allianceInt;
 
     public List<UnitLogic> controlledUnits;
+}
+
+public class Ability
+{
+    public Ability(string input)
+    {
+        string[] periodSplits = input.Split('.');
+
+        int.TryParse(periodSplits[0], out int _timeCost);
+        timeCost = _timeCost;
+
+        name = periodSplits[1];
+        description = periodSplits[2];
+
+        parameters = periodSplits[3].Split(',');
+        effects = periodSplits[4].Split(',');
+
+        int.TryParse(periodSplits[5], out int _cooldown);
+        cooldown = _cooldown;
+
+        int.TryParse(periodSplits[6], out int _uses);
+        uses = _uses;
+
+        string customDirector = "";
+        string sub = periodSplits[7];
+        
+        if (sub.Substring(0, 1).ToLower() == "b")
+        {
+            customDirector = "builtIn";
+        }
+        else if (sub.Substring(0, 1).ToLower() == "c")
+        {
+            customDirector = "custom";
+        }
+
+        string abFileName = sub.Substring(1);
+
+        icon = Resources.Load<Sprite>($"UnitComponents/Abilities/{customDirector}/{abFileName}/Icon_{abFileName}") as Sprite;
+
+        targetingTip = periodSplits[8];
+    }
+
+    public int timeCost = -1;
+
+    public string name = "Error";
+    public string description = "Error";
+
+    public string[] parameters;
+    public string[] effects;
+
+    public int cooldown = -1;
+    public int uses = -1;
+
+    public Sprite icon;
+
+    public string targetingTip;
 }
 
 public class EntityBase : MonoBehaviour
@@ -119,5 +178,32 @@ public class MapVoxelData
     public List<SceneryObject> sceneryObjects;
 
     public bool[] obstructedDirections;
+}
+
+public class PathObject
+{
+    public PathObject()
+    {
+        valid = false;
+
+        origin = new Vector3Int(-1,-1,-1);
+        destination = new Vector3Int(-1, -1, -1);
+
+        positions = new List<Vector3Int>();
+    }
+
+    public bool valid;
+
+    public Vector3Int origin;
+    public Vector3Int destination;
+
+    public List<Vector3Int> positions;
+}
+
+public class TargetingPackage
+{
+    public UnitLogic caster;
+    public EntityBase targetedEntity;
+    public Vector3 targetedPos;
 }
 

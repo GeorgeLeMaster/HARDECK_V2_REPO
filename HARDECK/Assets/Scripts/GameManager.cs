@@ -1,28 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class GameManager : MonoBehaviour
 {
 
     public static GameManager Instance;
 
+
     Camera cam;
 
     public bool controllsLocked = false;
+
+    public TargetingPackage targetingPackage;
 
     [Header("Player Commander Components")]
 
     public int allianceInt_player;
 
-    public AbilityCallDataPackage ACDP_player;
-
-    public int selectedAbility_player;
+    public EntityBase player_targetedTile;
+    public UnitLogic player_SelectedPlayerUnit;
+    public Ability player_selectedUnitAbility;
+    public UnitLogic player_targetedUnit;
 
     [Header("UI & GUI")]
     public LineRenderer lineRenderer1;
 
-    public GameObject selectedUnit_marker;
+    public GameObject markersParent;
+    public GameObject selectedUnitMarker;
     public GameObject target_pos_marker;
     public GameObject target_unit_marker;
 
@@ -36,13 +43,22 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
+
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        targetingPackage = new TargetingPackage();
+
         cam = Camera.main;
-        ACDP_player = new AbilityCallDataPackage();
+
+        GFXManager.instance.UpdateSelectedUnitUI();
+
+        selectedUnitMarker.SetActive(false);
+        selectedUnitMarker.transform.parent = markersParent.transform;
+        selectedUnitMarker.transform.position = new Vector3(0, -0.01f, -2f);
     }
 
     // Update is called once per frame
@@ -60,32 +76,18 @@ public class GameManager : MonoBehaviour
 
                     switch (hitEntity.entityType)
                     {
-                        case EntityType.GroundTile:
+                        case EntityType.GroundTile or EntityType.SceneryObj:
 
-                            SceneryObject hitGroundTile = hitEntity.GetComponent<SceneryObject>();
-                            if (hitGroundTile != null)
+
+                            if (player_SelectedPlayerUnit != null)
                             {
-                                if (hitGroundTile.flags.pathable == true && ACDP_player.caster != null)
-                                {
-                                    ACDP_player.target_pos = hitGroundTile.tilemapPosition;
-                                }
+                                player_targetedTile = hitEntity;
+                                targetingPackage.targetedEntity = hitEntity;
                             }
+
 
                             break;
 
-                        case EntityType.SceneryObj:
-
-                            SceneryObject hitSceneryObject = hitEntity.GetComponent<SceneryObject>();
-                            if (hitSceneryObject != null)
-                            {
-                                // IF THE SCENERY OBJECTG WE'VE CLICKED ON IS A PATHABLE GROUND TILE...
-                                if (hitSceneryObject.flags.pathable == true && ACDP_player.caster != null)
-                                {
-                                    ACDP_player.target_pos = hitSceneryObject.tilemapPosition;
-                                }
-                            }
-
-                            break;
 
                         case EntityType.Unit:
 
@@ -95,14 +97,36 @@ public class GameManager : MonoBehaviour
                                 // IF THE UNIT WE'VE CLICKED ON IS A FRIENDLY...
                                 if (hitUnit.allianceInt == allianceInt_player)
                                 {
-                                    ACDP_player.caster = hitUnit;
-                                    Debug.Log($"Selected {hitUnit.unitName}");
+
+                                    if (player_SelectedPlayerUnit == hitUnit)
+                                    {
+                                        player_SelectedPlayerUnit = null;
+
+                                        selectedUnitMarker.SetActive(false);
+                                        selectedUnitMarker.transform.parent = markersParent.transform;
+                                        selectedUnitMarker.transform.position = new Vector3(0, -0.01f, -2f);
+                                    }
+                                    else
+                                    {
+                                        player_SelectedPlayerUnit = hitUnit;
+
+                                        selectedUnitMarker.SetActive(true);
+                                        selectedUnitMarker.transform.parent = hitUnit.transform;
+                                        selectedUnitMarker.transform.position = hitUnit.transform.position;
+                                    }
+
+                                    // THIS WILL NEED UPDATING FOR FRIENDLY TARGETING FOR THINGS LIKE HEALING
+                                    // probably make some "use or observe" function that takes in a unit alliance and checks if it should be displayed or used in targeting info
+                                    targetingPackage.caster = player_SelectedPlayerUnit;
+                                    targetingPackage.targetedEntity = null;
+
                                 }
                                 else
                                 {
-                                    ACDP_player.target_unit = hitUnit;
-                                    Debug.Log($"Targeting {hitUnit.unitName}");
+                                    targetingPackage.targetedEntity = hitUnit;
                                 }
+
+
                             }
 
                             break;
@@ -110,14 +134,72 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-            ACDP_player.abilityId = selectedAbility_player;
-            AbilityManager.Instance.DisplayACDPGFX(ACDP_player);
-            AbilityManager.Instance.DisplayAbilityPreGFX( ACDP_player );
+            
+            GFXManager.instance.UpdateSelectedUnitUI();
+
         } // <--- if (Input.GetMouseButtonDown(0))
+
+        
     }
 
     public void TryCallAbiliy()
     {
-        AbilityManager.Instance.CallAbility(ACDP_player);
+
     }
+
+    public bool CheckParameters(Ability input)
+    {
+        if (input == null) {  return false; }
+
+        bool result = false;
+
+        foreach(string s in input.parameters)
+        {
+            bool singleTest = false;
+
+            string[] ps = s.Split('|');
+
+            foreach(string str in ps)
+            {
+                switch(str)
+                {
+                    case "gmmr":
+
+                        // needs a pathable tile within the movement range
+                        if (targetingPackage.caster != null && targetingPackage.targetedEntity != null)
+                        {
+                            if (player_targetedTile.flags.pathable)
+                            {
+                                PathObject path = MapBuilder.instance.BuildPath(targetingPackage.caster.tilemapPosition, targetingPackage.targetedEntity.tilemapPosition);
+                                if (path.valid == true)
+                                {
+                                    singleTest = true;
+                                }
+                            }
+                        }
+
+                        break;
+                    case "eu":
+
+                        break;
+                    case "des":
+
+                        break;
+                }
+
+            }
+
+            if (singleTest == false)
+            {
+                result = false;
+                Debug.Log("param fail");
+                return result;
+            }
+        }
+
+        result = true;
+
+        return result;
+    }
+
 }
