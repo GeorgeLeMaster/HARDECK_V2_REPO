@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
     public GameObject selectedUnitMarker;
     public GameObject target_pos_marker;
     public GameObject target_unit_marker;
+
 
     private void Awake()
     {
@@ -64,8 +67,13 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Return) && !controllsLocked)
+        {
+            TryCallAbility(player_selectedUnitAbility);
+        }
+
         // SLOTTING VARIOUS ENTITIES INTO THEIR VARIABLES, WE'LL DEAL WITH THE LOGIC AFTER
-        if (Input.GetMouseButtonDown(0) && !controllsLocked)
+        if (Input.GetMouseButtonDown(0) && !controllsLocked && !IsPointerOverUIElement())
         {
             RaycastHit hit;
             if (Physics.Raycast(cam.ScreenPointToRay(Input.mousePosition), out hit, 100f))
@@ -117,9 +125,14 @@ public class GameManager : MonoBehaviour
 
                                     // THIS WILL NEED UPDATING FOR FRIENDLY TARGETING FOR THINGS LIKE HEALING
                                     // probably make some "use or observe" function that takes in a unit alliance and checks if it should be displayed or used in targeting info
+                                    if (GFXManager.instance.selectedUnitDisplayAnchor.selectedCueCard != null)
+                                    {
+                                        GFXManager.instance.selectedUnitDisplayAnchor.selectedCueCard.SelectCueCard();
+                                    }
+                                    player_selectedUnitAbility = null;
                                     targetingPackage.caster = player_SelectedPlayerUnit;
                                     targetingPackage.targetedEntity = null;
-
+                                    GFXManager.instance.ClearSelectedUnitUI();
                                 }
                                 else
                                 {
@@ -142,14 +155,14 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void TryCallAbiliy()
+    public void TryCallAbility(Ability input)
     {
-
+        StartCoroutine(ExecuteLongLogic(input));
     }
 
     public bool CheckParameters(Ability input)
     {
-        if (input == null) {  return false; }
+        if (input == null || targetingPackage.caster == null) {  return false; }
 
         bool result = false;
 
@@ -157,18 +170,19 @@ public class GameManager : MonoBehaviour
         {
             bool singleTest = false;
 
-            string[] ps = s.Split('|');
+            string[] ps = s.Split('/');
 
             foreach(string str in ps)
             {
                 switch(str)
                 {
+
                     case "gmmr":
 
                         // needs a pathable tile within the movement range
                         if (targetingPackage.caster != null && targetingPackage.targetedEntity != null)
                         {
-                            if (player_targetedTile.flags.pathable)
+                            if (targetingPackage.targetedEntity.flags.pathable)
                             {
                                 PathObject path = MapBuilder.instance.BuildPath(targetingPackage.caster.tilemapPosition, targetingPackage.targetedEntity.tilemapPosition);
                                 if (path.valid == true)
@@ -180,6 +194,18 @@ public class GameManager : MonoBehaviour
 
                         break;
                     case "eu":
+                        Debug.Log("1");
+                        if (targetingPackage.targetedEntity != null)
+                        {
+                            UnitLogic enemyL = targetingPackage.targetedEntity.GetComponent<UnitLogic>();
+                            if (enemyL != null)
+                            {
+                                if (enemyL.allianceInt != targetingPackage.caster.allianceInt)
+                                {
+                                    singleTest = true;
+                                }
+                            }
+                        }
 
                         break;
                     case "des":
@@ -200,6 +226,97 @@ public class GameManager : MonoBehaviour
         result = true;
 
         return result;
+    }
+
+
+    public IEnumerator ExecuteLongLogic(Ability input)
+    {
+
+        GameManager.Instance.controllsLocked = true;
+        bool endConditions = false;
+
+        PathObject path = new PathObject();
+        Vector3 prevPos = Vector3.zero;
+        float timeElapsed = 0;
+
+        if (input.effects.Contains("mtl"))
+        {
+            path = MapBuilder.instance.BuildPath(targetingPackage.caster.tilemapPosition, targetingPackage.targetedEntity.tilemapPosition);
+            prevPos = targetingPackage.caster.tilemapPosition;
+        }
+
+        while (endConditions == false)
+        {
+            foreach (string str in input.effects)
+            {
+                switch (str)
+                {
+                    case "mtl": // MOVE__________________________________________________
+
+                        timeElapsed += Time.deltaTime;
+                        selectedUnitMarker.transform.position = targetingPackage.caster.gameObject.transform.position;
+
+                        if (path.positions.Count == 1 && path.positions[0] == targetingPackage.caster.tilemapPosition)
+                        {
+                            endConditions = true;
+                            break;
+                        }
+
+                        if (Vector3.Distance(targetingPackage.caster.gameObject.transform.position, path.positions.First()) > 0.005f)
+                        {
+                            targetingPackage.caster.gameObject.transform.position = Vector3.Lerp(prevPos, (Vector3Int)path.positions.First(), timeElapsed / targetingPackage.caster.moveSpeed);
+                        }
+                        else
+                        {
+                            path.positions.Remove(path.positions.First());
+                            if (path.positions.Count == 0)
+                            {
+
+                                targetingPackage.caster.transform.position = targetingPackage.targetedEntity.tilemapPosition;
+                                targetingPackage.caster.tilemapPosition = targetingPackage.targetedEntity.tilemapPosition;
+
+
+                                endConditions = true;
+                            }
+                            else
+                            {
+                                prevPos = targetingPackage.caster.transform.position;
+                                timeElapsed = 0;
+
+                                if (path.positions.Count() == 0)
+                                {
+                                    break;
+                                }
+                            }
+                        }
+
+                        break;
+
+                    case "atk":
+
+                        targetingPackage.targetedEntity.TakeDamage(1);
+                        endConditions = true;
+
+                        break;
+
+                    default:
+                        endConditions = true;
+                        break;
+                }
+            }
+            yield return new WaitForEndOfFrame();
+        }
+        controllsLocked = false;
+        player_selectedUnitAbility = null;
+        GFXManager.instance.UpdateSelectedUnitUI();
+        yield return new WaitForEndOfFrame();
+    }
+
+
+
+    private bool IsPointerOverUIElement()
+    {
+        return EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
     }
 
 }

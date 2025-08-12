@@ -19,8 +19,7 @@ public class SelectedUnitDisplayAnchor : MonoBehaviour
     public TextMeshProUGUI targetingAbilityText;
     public Image targetingDescriptorIcon;
     public GameObject selectionIndicator;
-    public AbilityCueCardHandler selecteedCueCard;
-    public GameObject confirmActionButton;
+    public AbilityCueCardHandler selectedCueCard;
 
     public void Start()
     {
@@ -74,9 +73,14 @@ public class SelectedUnitDisplayAnchor : MonoBehaviour
         SetAbilityCueCards(input);
     }
 
+    public void LockAbilityCueCards()
+    {
+
+    }
+
     public void SetTargetingDescriptor()
     {
-        Ability a = selecteedCueCard.ability;
+        Ability a = selectedCueCard.ability;
 
         targetingAbilityText.text = a.description;
 
@@ -85,7 +89,6 @@ public class SelectedUnitDisplayAnchor : MonoBehaviour
         if (paraaCheck == true)
         {
             targetingDescriptorText.text = "CONFIRM ACTION";
-            confirmActionButton.SetActive(true);
 
         }
         else
@@ -93,13 +96,11 @@ public class SelectedUnitDisplayAnchor : MonoBehaviour
             if (a.targetingTip != "zzz")
             {
                 targetingDescriptorText.text = a.targetingTip;
-                confirmActionButton.SetActive(false);
 
             }
             else
             {
                 targetingDescriptorText.text = "CONFIRM ACTION";
-                confirmActionButton.SetActive(true);
 
             }
         }
